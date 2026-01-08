@@ -96,9 +96,46 @@ class PricePredictor:
             raise
     
     async def _get_historical_data(self, commodity: str, state: str, district: str) -> pd.DataFrame:
-        """Fetch historical price data"""
-        # In production, this would query the database
-        # For now, generate synthetic historical data
+        """Fetch historical price data from database or data collector"""
+        try:
+            # Try to get data from database first
+            from utils.database import DatabaseManager
+            db = DatabaseManager()
+            
+            historical_df = db.get_historical_prices(commodity, state, days_back=90, district=district)
+            
+            if len(historical_df) >= 30:
+                logger.info(f"Retrieved {len(historical_df)} historical records from database")
+                return historical_df
+            else:
+                logger.warning("Insufficient historical data in database, using data collector")
+                
+                # Fallback to data collector
+                from services.data_collector import DataCollector
+                collector = DataCollector()
+                
+                price_data = await collector.collect_price_data(commodity, state, district, days_back=90)
+                historical_records = price_data.get("historical_data", [])
+                
+                if historical_records:
+                    df = pd.DataFrame(historical_records)
+                    
+                    # Store in database for future use
+                    db.store_price_data(price_data)
+                    
+                    return df
+                else:
+                    # Final fallback to synthetic data
+                    logger.warning("No real data available, generating synthetic data")
+                    return self._generate_synthetic_historical_data(commodity, state, district)
+                    
+        except Exception as e:
+            logger.error(f"Error fetching historical data: {str(e)}")
+            # Fallback to synthetic data
+            return self._generate_synthetic_historical_data(commodity, state, district)
+    
+    def _generate_synthetic_historical_data(self, commodity: str, state: str, district: str) -> pd.DataFrame:
+        """Generate synthetic historical data as fallback"""
         dates = pd.date_range(end=datetime.now(), periods=90, freq='D')
         
         # Base price varies by commodity
@@ -124,7 +161,11 @@ class PricePredictor:
         
         df = pd.DataFrame({
             'date': dates,
-            'price': prices
+            'commodity': commodity,
+            'state': state,
+            'district': district,
+            'price': prices,
+            'unit': 'INR per quintal'
         })
         
         return df

@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, User, LogOut } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useAuth } from '../contexts/AuthContext';
+import AuthModal from './AuthModal';
 
 const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
+  const { user, profile, isAuthenticated, logout } = useAuth();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const navLinks = [
     { label: 'About', href: '/about' },
@@ -80,13 +85,64 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Login/Sign Up Button */}
-            <Link
-              to="/#get-started"
-              className="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
-            >
-              Login / Sign Up
-            </Link>
+            {/* Authentication Section */}
+            {isAuthenticated ? (
+              <div className="relative">
+                <button
+                  onClick={() => setShowUserDropdown(!showUserDropdown)}
+                  className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                >
+                  <User className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">
+                    {profile?.full_name || user?.email || 'User'}
+                  </span>
+                </button>
+
+                {showUserDropdown && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2">
+                    <Link
+                      to="/dashboard"
+                      onClick={() => setShowUserDropdown(false)}
+                      className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      to="/farm-profile"
+                      onClick={() => setShowUserDropdown(false)}
+                      className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      Farm Profile
+                    </Link>
+                    <Link
+                      to="/settings"
+                      onClick={() => setShowUserDropdown(false)}
+                      className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      Settings
+                    </Link>
+                    <hr className="my-2 border-gray-200 dark:border-gray-700" />
+                    <button
+                      onClick={() => {
+                        logout();
+                        setShowUserDropdown(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2"
+                    >
+                      <LogOut className="w-4 h-4" />
+                      <span>Logout</span>
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                onClick={() => setShowAuthModal(true)}
+                className="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
+              >
+                Login / Sign Up
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -139,18 +195,70 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Mobile Login Button */}
-              <Link
-                to="/#get-started"
-                onClick={() => setShowMobileMenu(false)}
-                className="block mx-4 px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium text-center transition-colors"
-              >
-                Login / Sign Up
-              </Link>
+              {/* Mobile Authentication Section */}
+              {isAuthenticated ? (
+                <div className="px-4 py-2 space-y-2">
+                  <div className="flex items-center space-x-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                    <User className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">
+                      {profile?.full_name || user?.email || 'User'}
+                    </span>
+                  </div>
+                  <Link
+                    to="/dashboard"
+                    onClick={() => setShowMobileMenu(false)}
+                    className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                  >
+                    Dashboard
+                  </Link>
+                  <Link
+                    to="/farm-profile"
+                    onClick={() => setShowMobileMenu(false)}
+                    className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                  >
+                    Farm Profile
+                  </Link>
+                  <Link
+                    to="/settings"
+                    onClick={() => setShowMobileMenu(false)}
+                    className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                  >
+                    Settings
+                  </Link>
+                  <button
+                    onClick={() => {
+                      logout();
+                      setShowMobileMenu(false);
+                    }}
+                    className="w-full text-left px-3 py-2 text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors flex items-center space-x-2"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span>Logout</span>
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowAuthModal(true);
+                    setShowMobileMenu(false);
+                  }}
+                  className="block mx-4 px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium text-center transition-colors"
+                >
+                  Login / Sign Up
+                </button>
+              )}
             </div>
           </div>
         )}
       </div>
+
+      {/* Authentication Modal */}
+      {showAuthModal && (
+        <AuthModal
+          isOpen={showAuthModal}
+          onClose={() => setShowAuthModal(false)}
+        />
+      )}
     </nav>
   );
 };

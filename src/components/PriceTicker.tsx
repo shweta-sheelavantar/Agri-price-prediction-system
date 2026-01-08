@@ -13,7 +13,9 @@ const PriceTicker = () => {
         const data = await marketPricesAPI.getTicker();
         setPrices(data);
       } catch (error) {
-        console.error('Error fetching ticker prices:', error);
+        console.warn('Ticker API error, retrying...', error);
+        // Don't show error to user, just retry with exponential backoff
+        setTimeout(fetchPrices, 5000);
       } finally {
         setIsLoading(false);
       }

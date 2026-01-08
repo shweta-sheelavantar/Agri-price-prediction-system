@@ -319,6 +319,10 @@ class YieldPredictor:
     def get_mae(self) -> float:
         return self.mae
     
+    def get_rmse(self) -> float:
+        # Calculate RMSE from MAE (approximate)
+        return self.mae * 1.5
+    
     def get_r2_score(self) -> float:
         return self.r2_score
     

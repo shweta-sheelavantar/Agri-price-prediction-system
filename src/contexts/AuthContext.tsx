@@ -1,12 +1,22 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { User } from '../types';
+import { User, Session } from '@supabase/supabase-js';
+import { authService } from '../services/authService';
+import { UserProfile } from '../lib/supabase';
 
 interface AuthContextType {
   user: User | null;
-  isAuthenticated: boolean;
-  login: (mobileNumber: string, primaryCrop: string) => Promise<void>;
-  logout: () => void;
+  profile: UserProfile | null;
+  session: Session | null;
+  signUp: (email: string, password: string, phone: string, fullName: string) => Promise<{ user: User; session: Session; } | null>;
+  signIn: (email: string, password: string) => Promise<void>;
+  signInWithPhone: (phone: string) => Promise<void>;
+  verifyOtp: (phone: string, token: string) => Promise<void>;
+  logout: () => Promise<void>;
+  updateProfile: (updates: Partial<UserProfile>) => Promise<void>;
   isLoading: boolean;
+  isAuthenticated: boolean;
+  // Legacy method for backward compatibility
+  login: (mobileNumber: string, primaryCrop: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -25,71 +35,206 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+  const [isLoading, setIsLoading] = useState(false); // Start with false for faster initial load
 
   useEffect(() => {
-    // Check for existing session in localStorage
-    const storedUser = localStorage.getItem('agrifriend_user');
-    const sessionExpiry = localStorage.getItem('agrifriend_session_expiry');
+    console.log('⚡ AuthContext initializing instantly...');
     
-    if (storedUser && sessionExpiry) {
-      const expiryDate = new Date(sessionExpiry);
-      if (expiryDate > new Date()) {
-        setUser(JSON.parse(storedUser));
-      } else {
-        // Session expired
-        localStorage.removeItem('agrifriend_user');
-        localStorage.removeItem('agrifriend_session_expiry');
+    // Get initial session (non-blocking)
+    authService.getCurrentSession().then((session) => {
+      console.log('📋 Initial session:', session ? 'Found' : 'None');
+      setSession(session);
+      setUser(session?.user ?? null);
+      
+      if (session?.user) {
+        console.log('👤 Loading profile for user:', session.user.id);
+        // Load profile in background
+        setTimeout(() => {
+          loadUserProfile(session.user.id);
+        }, 100);
       }
-    }
-    setIsLoading(false);
+    }).catch((error) => {
+      console.error('❌ Error getting initial session:', error);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = authService.onAuthStateChange(
+      async (event, session) => {
+        console.log('🔄 Auth state changed:', event, session ? 'User logged in' : 'User logged out');
+        setSession(session);
+        setUser(session?.user ?? null);
+        
+        if (session?.user) {
+          console.log('👤 Loading profile after auth change for user:', session.user.id);
+          // Load profile in background
+          setTimeout(() => {
+            loadUserProfile(session.user.id);
+          }, 100);
+        } else {
+          setProfile(null);
+        }
+      }
+    );
+
+    return () => {
+      console.log('🧹 AuthContext cleanup');
+      subscription.unsubscribe();
+    };
   }, []);
 
-  const login = async (mobileNumber: string, primaryCrop: string) => {
-    // Simulate SMS sending and authentication
-    console.log(`Sending SMS to ${mobileNumber}...`);
-    
-    // Mock user creation
-    const newUser: User = {
-      id: `user_${Date.now()}`,
-      mobileNumber,
-      primaryCrop,
-      registrationDate: new Date(),
-      lastLoginDate: new Date(),
-      preferredLanguage: 'en',
-      isActive: true,
-      preferences: {
-        notificationChannels: ['push', 'sms'],
-        priceAlertFrequency: 'realtime',
-        dashboardLayout: 'default',
-        theme: 'light',
-      },
-    };
-
-    // Set session expiry to 30 days from now
-    const expiryDate = new Date();
-    expiryDate.setDate(expiryDate.getDate() + 30);
-
-    localStorage.setItem('agrifriend_user', JSON.stringify(newUser));
-    localStorage.setItem('agrifriend_session_expiry', expiryDate.toISOString());
-    
-    setUser(newUser);
+  const loadUserProfile = async (userId: string) => {
+    try {
+      console.log('📥 Loading user profile for:', userId);
+      const userProfile = await authService.getUserProfile(userId);
+      console.log('✅ User profile loaded:', userProfile ? 'Success' : 'Not found');
+      setProfile(userProfile);
+      
+      // If profile exists, update user metadata for easier access
+      if (userProfile && user) {
+        const updatedUser = {
+          ...user,
+          user_metadata: {
+            ...user.user_metadata,
+            full_name: userProfile.full_name,
+            phone: userProfile.phone,
+            profession: userProfile.profession,
+            land_size: userProfile.land_size,
+            land_unit: userProfile.land_unit,
+            primary_crop: userProfile.primary_crop,
+            crop_cycle: userProfile.crop_cycle,
+            equipment: userProfile.equipment,
+            location: userProfile.location
+          }
+        };
+        setUser(updatedUser);
+        console.log('✅ User metadata updated with profile data');
+      }
+    } catch (error) {
+      console.error('❌ Error loading user profile:', error);
+      // Don't throw error - profile might not exist yet for new users
+    }
   };
 
-  const logout = () => {
-    localStorage.removeItem('agrifriend_user');
-    localStorage.removeItem('agrifriend_session_expiry');
-    setUser(null);
+  const signUp = async (email: string, password: string, phone: string, fullName: string) => {
+    setIsLoading(true);
+    try {
+      const result = await authService.signUp(email, password, phone, fullName);
+      
+      // If user is immediately available (no email confirmation), update state
+      if (result?.user && result?.session) {
+        console.log('🔄 Immediate signup success, updating auth state');
+        setUser(result.user);
+        setSession(result.session);
+        // Profile will be loaded by the auth state change listener
+      }
+      
+      return result;
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  const signIn = async (email: string, password: string) => {
+    setIsLoading(true);
+    try {
+      await authService.signIn(email, password);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const signInWithPhone = async (phone: string) => {
+    setIsLoading(true);
+    try {
+      await authService.signInWithPhone(phone);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const verifyOtp = async (phone: string, token: string) => {
+    setIsLoading(true);
+    try {
+      await authService.verifyOtp(phone, token);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const logout = async () => {
+    setIsLoading(true);
+    try {
+      await authService.signOut();
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const updateProfile = async (updates: Partial<UserProfile>) => {
+    console.log('🔄 UpdateProfile called, current user:', user?.id);
+    
+    if (!user) {
+      console.error('❌ No user logged in for profile update');
+      throw new Error('No user logged in');
+    }
+    
+    try {
+      console.log('📝 Updating profile for user:', user.id);
+      const updatedProfile = await authService.updateUserProfile(user.id, updates);
+      console.log('✅ Profile update successful:', updatedProfile);
+      setProfile(updatedProfile);
+      
+      // Immediately update user metadata for instant access across the app
+      if (updatedProfile) {
+        const updatedUser = {
+          ...user,
+          user_metadata: {
+            ...user.user_metadata,
+            full_name: updatedProfile.full_name,
+            phone: updatedProfile.phone,
+            profession: updatedProfile.profession,
+            land_size: updatedProfile.land_size,
+            land_unit: updatedProfile.land_unit,
+            primary_crop: updatedProfile.primary_crop,
+            crop_cycle: updatedProfile.crop_cycle,
+            equipment: updatedProfile.equipment,
+            location: updatedProfile.location
+          }
+        };
+        setUser(updatedUser);
+        console.log('✅ User metadata immediately updated with new profile data');
+      }
+    } catch (error) {
+      console.error('❌ Error updating profile:', error);
+      throw error;
+    }
+  };
+
+  // Legacy login method for backward compatibility
+  const login = async (mobileNumber: string, _primaryCrop: string) => {
+    // For now, we'll use phone authentication
+    await signInWithPhone(mobileNumber);
+  };
+
+  const isAuthenticated = !!user && !!session;
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        isAuthenticated: !!user,
-        login,
+        profile,
+        session,
+        signUp,
+        signIn,
+        signInWithPhone,
+        verifyOtp,
         logout,
+        updateProfile,
         isLoading,
+        isAuthenticated,
+        login, // Legacy method
       }}
     >
       {children}

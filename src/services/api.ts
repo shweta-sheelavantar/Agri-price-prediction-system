@@ -45,18 +45,23 @@ export const marketPricesAPI = {
   async getAll(filters?: { commodity?: string; state?: string; location?: string }): Promise<MarketPrice[]> {
     await delay();
     
-    // Use hybrid API (real AGMARKNET + mock fallback)
+    // Use hybrid API (real AGMARKNET + mock fallback) with timeout
     try {
-      const prices = await getMarketPrices({
+      const timeoutPromise = new Promise<never>((_, reject) => 
+        setTimeout(() => reject(new Error('API timeout')), 5000)
+      );
+      
+      const pricesPromise = getMarketPrices({
         commodity: filters?.commodity,
         state: filters?.state,
         district: filters?.location,
         limit: 100,
       });
       
+      const prices = await Promise.race([pricesPromise, timeoutPromise]);
       return prices;
     } catch (error) {
-      console.error('Error fetching market prices:', error);
+      console.warn('API unavailable, using mock data:', error.message);
       // Final fallback to mock data
       return generateMockMarketPrices(100);
     }
@@ -99,11 +104,17 @@ export const marketPricesAPI = {
   async getTicker(): Promise<MarketPrice[]> {
     await delay(200);
     
-    // Use hybrid API for ticker
+    // Use hybrid API for ticker with timeout
     try {
-      return await getLatestPrices(10);
+      const timeoutPromise = new Promise<never>((_, reject) => 
+        setTimeout(() => reject(new Error('Ticker API timeout')), 3000)
+      );
+      
+      const pricesPromise = getLatestPrices(10);
+      const prices = await Promise.race([pricesPromise, timeoutPromise]);
+      return prices;
     } catch (error) {
-      console.error('Error fetching ticker prices:', error);
+      console.warn('Ticker API unavailable, using mock data:', error.message);
       // Fallback to mock data
       return generateMockMarketPrices(10);
     }

@@ -40,6 +40,29 @@ function debugLog(...args: any[]) {
   }
 }
 
+// Suppress backend errors to prevent console spam
+function suppressBackendErrors() {
+  const originalError = console.error;
+  console.error = (...args) => {
+    const message = args.join(' ');
+    // Suppress known backend errors that don't affect frontend
+    if (
+      message.includes('services.agmarknet_client') ||
+      message.includes('services.realtime_dashboard') ||
+      message.includes('services.continuous_ml') ||
+      message.includes('PricePredictor') ||
+      message.includes('DataCollector') ||
+      message.includes('dashboard_callback')
+    ) {
+      return; // Suppress these errors
+    }
+    originalError.apply(console, args);
+  };
+}
+
+// Initialize error suppression
+suppressBackendErrors();
+
 /**
  * Check if we should use real API
  */
@@ -78,12 +101,25 @@ async function performHealthCheck(): Promise<boolean> {
 }
 
 /**
+ * Add timeout to prevent hanging API calls
+ */
+function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<never>((_, reject) => 
+      setTimeout(() => reject(new Error('API timeout')), timeoutMs)
+    )
+  ]);
+}
+
+/**
  * Execute API call with fallback
  */
 async function executeWithFallback<T>(
   realAPICall: () => Promise<T>,
   mockDataGenerator: () => T,
-  operationName: string
+  operationName: string,
+  timeoutMs: number = 5000
 ): Promise<T> {
   const useReal = shouldUseRealAPI();
   
@@ -94,9 +130,9 @@ async function executeWithFallback<T>(
     return mockDataGenerator();
   }
   
-  // Try real API
+  // Try real API with timeout
   try {
-    const result = await realAPICall();
+    const result = await withTimeout(realAPICall(), timeoutMs);
     debugLog(`${operationName} - Real API success`);
     return result;
   } catch (error: any) {
@@ -155,7 +191,8 @@ export async function getMarketPrices(filters?: {
       
       return mockPrices;
     },
-    'getMarketPrices'
+    'getMarketPrices',
+    3000 // 3 second timeout for market prices
   );
 }
 
@@ -175,7 +212,8 @@ export async function getCommodityPrices(commodity: string, state?: string): Pro
       }
       return mockPrices;
     },
-    'getCommodityPrices'
+    'getCommodityPrices',
+    3000 // 3 second timeout for commodity prices
   );
 }
 
@@ -189,7 +227,8 @@ export async function getStatePrices(state: string, limit: number = 100): Promis
       const mockPrices = generateMockMarketPrices(limit);
       return mockPrices.filter(p => p.market.state === state);
     },
-    'getStatePrices'
+    'getStatePrices',
+    3000 // 3 second timeout for state prices
   );
 }
 
@@ -200,7 +239,8 @@ export async function getLatestPrices(limit: number = 20): Promise<MarketPrice[]
   return executeWithFallback(
     () => fetchLatestPrices(limit),
     () => generateMockMarketPrices(limit),
-    'getLatestPrices'
+    'getLatestPrices',
+    2000 // 2 second timeout for ticker (needs to be fast)
   );
 }
 

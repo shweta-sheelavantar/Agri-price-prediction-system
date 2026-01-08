@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { useLanguage } from '../contexts/LanguageContext';
+
+import { realtimeService } from '../services/realtimeService';
 import PriceTicker from '../components/PriceTicker';
 import { 
   TrendingUp, 
@@ -19,40 +20,112 @@ import {
   Leaf,
   MapPin,
   ChevronRight,
-  TrendingDown
+  TrendingDown,
+  Cloud
 } from 'lucide-react';
 import { marketPricesAPI, farmProfileAPI } from '../services/api';
+import { UserDataService } from '../services/userDataService';
+import DataFlowIndicator from '../components/DataFlowIndicator';
+import ProfileCompletionGuard from '../components/ProfileCompletionGuard';
 import type { MarketPrice, FarmProfile } from '../types';
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
-  const { t } = useLanguage();
+  const { user, profile, logout } = useAuth();
+
   const navigate = useNavigate();
   const [prices, setPrices] = useState<MarketPrice[]>([]);
   const [farmProfile, setFarmProfile] = useState<FarmProfile | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading] = useState(false); // Start with false for instant loading
+  const [connectionStatus, setConnectionStatus] = useState<'connected' | 'connecting' | 'disconnected' | 'mock'>('mock');
+  const [notifications] = useState<any[]>([]);
+  // Removed annoying popup - no more data flow indicator
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (!user) return;
+    // Load dashboard data without annoying popups
+    if (!user) return;
 
-      try {
-        const pricesData = await marketPricesAPI.getAll({ commodity: user.primaryCrop.split(' ')[0] });
-        setPrices(pricesData.slice(0, 3));
-
-        let profile = await farmProfileAPI.get(user.id);
-        if (!profile) {
-          profile = await farmProfileAPI.create(user.id, {});
-        }
-        setFarmProfile(profile);
-      } catch (error) {
-        console.error('Error:', error);
-      } finally {
-        setIsLoading(false);
+    console.log('⚡ Dashboard loading for user:', user.email);
+    
+    // Create immediate data using centralized service for consistent flow
+    const createIntegratedData = () => {
+      // Only create data if profile is complete
+      if (!profile || !profile.primary_crop || !profile.full_name) {
+        console.log('⚠️ Profile incomplete, not generating dashboard data');
+        setFarmProfile(null);
+        setPrices([]);
+        return;
       }
+
+      // Extract farmer data using centralized service
+      const farmerData = UserDataService.extractFarmerData(user, profile);
+      
+      if (!farmerData) {
+        console.log('⚠️ Could not extract farmer data for dashboard');
+        setFarmProfile(null);
+        setPrices([]);
+        return;
+      }
+      
+      // Generate farm profile using centralized service (Flow 4 → Flow 6)
+      const integratedProfile = UserDataService.generateFarmProfile(farmerData);
+      setFarmProfile(integratedProfile as any);
+
+      // Create price data based on farmer's primary crop
+      const cropPrices = [
+        {
+          id: '1',
+          commodity: farmerData.primaryCrop,
+          market: { location: 'Local Market', state: farmerData.location.state },
+          price: { value: 2500, unit: 'quintal' },
+          priceChange: { value: 50, percentage: 2.1 },
+          date: new Date().toISOString()
+        }
+      ];
+      setPrices(cropPrices as any);
+      
+      console.log('✅ Dashboard data integrated for', farmerData.fullName, 'growing', farmerData.primaryCrop);
     };
 
-    fetchData();
+    // Set integrated data immediately
+    createIntegratedData();
+
+    // Load real data in background (non-blocking)
+    setTimeout(async () => {
+      try {
+        // Try to load real data without blocking UI
+        const pricesData = await marketPricesAPI.getAll({ commodity: 'Wheat' });
+        if (pricesData.length > 0) {
+          setPrices(pricesData.slice(0, 3));
+        }
+      } catch (error) {
+        console.warn('Background data loading failed:', error);
+      }
+
+      try {
+        let profile = await farmProfileAPI.get(user.id);
+        if (profile) {
+          setFarmProfile(profile);
+        }
+      } catch (error) {
+        console.warn('Background profile loading failed:', error);
+      }
+    }, 500);
+
+    // Connect real-time features much later (non-blocking)
+    setTimeout(() => {
+      try {
+        realtimeService.connect(user.id || 'demo-user');
+        setConnectionStatus('connected');
+      } catch (error) {
+        console.warn('Real-time connection failed:', error);
+        setConnectionStatus('mock');
+      }
+    }, 2000);
+
+    // Cleanup
+    return () => {
+      realtimeService.disconnect();
+    };
   }, [user]);
 
   if (isLoading) {
@@ -67,8 +140,9 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex">
-      {/* Sidebar */}
+    <ProfileCompletionGuard>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex">
+        {/* Sidebar */}
       <aside className="hidden md:flex flex-col bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 w-64">
         <div className="h-16 flex items-center px-4 border-b border-gray-200 dark:border-gray-700">
           <h1 className="text-xl font-bold text-primary-600 dark:text-primary-400">AgriFriend</h1>
@@ -126,10 +200,35 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         <header className="h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-4 md:px-6">
-          <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Farmer Dashboard</h2>
-          <button className="relative p-2 text-gray-600 dark:text-gray-300">
-            <Bell className="w-6 h-6" />
-          </button>
+          <div className="flex items-center space-x-4">
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Farmer Dashboard</h2>
+            {/* Connection Status Indicator */}
+            <div className="flex items-center space-x-2">
+              <div className={`w-2 h-2 rounded-full ${
+                connectionStatus === 'connected' ? 'bg-green-500 animate-pulse' :
+                connectionStatus === 'mock' ? 'bg-yellow-500' :
+                connectionStatus === 'connecting' ? 'bg-blue-500 animate-pulse' :
+                'bg-red-500'
+              }`}></div>
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                {connectionStatus === 'connected' ? 'Live' :
+                 connectionStatus === 'mock' ? 'Demo Mode' :
+                 connectionStatus === 'connecting' ? 'Connecting...' :
+                 'Offline'}
+              </span>
+            </div>
+          </div>
+          <div className="flex items-center space-x-3">
+            {/* Notifications */}
+            <button className="relative p-2 text-gray-600 dark:text-gray-300">
+              <Bell className="w-6 h-6" />
+              {notifications.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {notifications.length}
+                </span>
+              )}
+            </button>
+          </div>
         </header>
 
         <PriceTicker />
@@ -192,7 +291,7 @@ const Dashboard = () => {
               <div className="p-6 border-b border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                    Market Prices - {user?.primaryCrop}
+                    Market Prices - {user?.user_metadata?.primary_crop || 'Wheat'}
                   </h3>
                   <Link to="/market-prices" className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 flex items-center">
                     View all <ChevronRight className="w-4 h-4 ml-1" />
@@ -243,6 +342,10 @@ const Dashboard = () => {
                   <Brain className="w-8 h-8 text-purple-600 dark:text-purple-400 mb-2" />
                   <p className="text-sm font-medium text-gray-800 dark:text-white">AI Predictions</p>
                 </button>
+                <button onClick={() => navigate('/enhanced-predictions')} className="p-4 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/20 dark:to-indigo-800/20 rounded-xl hover:shadow-md transition-all">
+                  <Cloud className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-2" />
+                  <p className="text-sm font-medium text-gray-800 dark:text-white">Weather Forecast</p>
+                </button>
                 <button onClick={() => navigate('/inventory')} className="p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl hover:shadow-md transition-all">
                   <Package className="w-8 h-8 text-green-600 dark:text-green-400 mb-2" />
                   <p className="text-sm font-medium text-gray-800 dark:text-white">Inventory</p>
@@ -291,6 +394,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </ProfileCompletionGuard>
   );
 };
 

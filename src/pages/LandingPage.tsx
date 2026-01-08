@@ -4,16 +4,21 @@ import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import PriceTicker from '../components/PriceTicker';
 import Navbar from '../components/Navbar';
+import AuthModal from '../components/AuthModal';
+import AuthRequiredNotification from '../components/AuthRequiredNotification';
 import { Phone, Mail, TrendingUp, Brain, Users, Shield, Zap, Globe } from 'lucide-react';
 import { marketPricesAPI } from '../services/api';
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const { t } = useLanguage();
   const [mobileNumber, setMobileNumber] = useState('');
   const [primaryCrop, setPrimaryCrop] = useState('Wheat (गेहूं)');
   const [isLoading, setIsLoading] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup'>('signin');
+  const [showAuthNotification, setShowAuthNotification] = useState(false);
   
   // Price checker state
   const [selectedCrop, setSelectedCrop] = useState('Onion');
@@ -37,6 +42,17 @@ const LandingPage = () => {
 
   const priceCheckCrops = ['Wheat', 'Rice', 'Cotton', 'Onion', 'Tomato', 'Potato', 'Soybean'];
 
+  // DISABLED: Auto-redirect for authenticated users
+  // Uncomment to re-enable automatic redirect to dashboard
+  /*
+  useEffect(() => {
+    if (isAuthenticated) {
+      console.log('🔄 User is authenticated, redirecting to dashboard');
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
+  */
+
   useEffect(() => {
     // Fetch price for selected crop
     const fetchPrice = async () => {
@@ -56,6 +72,21 @@ const LandingPage = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if user is already authenticated
+    if (isAuthenticated) {
+      navigate('/dashboard');
+      return;
+    }
+
+    // Show authentication modal if not logged in
+    if (mobileNumber || primaryCrop !== 'Wheat (गेहूं)') {
+      setAuthModalMode('signin');
+      setShowAuthModal(true);
+      return;
+    }
+
+    // Legacy login for backward compatibility
     if (mobileNumber.length !== 10) {
       alert('Please enter a valid 10-digit mobile number');
       return;
@@ -75,6 +106,12 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Authentication Modal */}
+      <AuthModal 
+        isOpen={showAuthModal} 
+        onClose={() => setShowAuthModal(false)}
+        initialMode={authModalMode}
+      />
       {/* Price Ticker */}
       <PriceTicker />
       
@@ -102,61 +139,71 @@ const LandingPage = () => {
             {t('landing.hero.features')}
           </p>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-8 max-w-md mx-auto">
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-              {t('landing.hero.form.title')}
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+              Your Smart Farming Companion
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              {t('landing.hero.form.subtitle')}
-            </p>
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div className="text-left">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {t('landing.hero.form.mobile')}
-                </label>
-                <div className="relative">
-                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
-                    +91
-                  </span>
-                  <input
-                    type="tel"
-                    value={mobileNumber}
-                    onChange={(e) => setMobileNumber(e.target.value.replace(/\D/g, '').slice(0, 10))}
-                    placeholder="98765 43210"
-                    className="input-field pl-12 text-gray-800"
-                    required
-                  />
+            
+            {/* Key Benefits */}
+            <div className="space-y-4 mb-6">
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-4 h-4 text-green-600" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-800 dark:text-white text-sm">Live Mandi Prices</p>
+                  <p className="text-xs text-gray-500">Real-time prices from 2,400+ mandis across India</p>
                 </div>
               </div>
-
-              <div className="text-left">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {t('landing.hero.form.crop')}
-                </label>
-                <select
-                  value={primaryCrop}
-                  onChange={(e) => setPrimaryCrop(e.target.value)}
-                  className="input-field text-gray-800"
-                >
-                  {crops.map((crop) => (
-                    <option key={crop} value={crop}>
-                      {crop}
-                    </option>
-                  ))}
-                </select>
+              
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Brain className="w-4 h-4 text-purple-600" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-800 dark:text-white text-sm">AI Price Predictions</p>
+                  <p className="text-xs text-gray-500">Know the best time to sell with 85%+ accuracy</p>
+                </div>
               </div>
+              
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Users className="w-4 h-4 text-blue-600" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-800 dark:text-white text-sm">Direct Buyer Connect</p>
+                  <p className="text-xs text-gray-500">Skip middlemen, get better prices for your crops</p>
+                </div>
+              </div>
+            </div>
 
+            {/* CTA Buttons */}
+            <div className="space-y-3">
               <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                type="button"
+                onClick={() => {
+                  setAuthModalMode('signup');
+                  setShowAuthModal(true);
+                }}
+                className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
               >
-                {isLoading ? t('landing.hero.form.loading') : t('landing.hero.form.button')}
+                Create Free Account
               </button>
+              
+              <button
+                type="button"
+                onClick={() => {
+                  setAuthModalMode('signin');
+                  setShowAuthModal(true);
+                }}
+                className="w-full bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+              >
+                Sign In
+              </button>
+            </div>
 
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
-                {t('landing.hero.form.sms')}
-              </p>
-            </form>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
+              100% Free • No hidden charges • Works on any phone
+            </p>
           </div>
 
           <div className="mt-8 text-sm text-gray-400">
@@ -234,7 +281,13 @@ const LandingPage = () => {
 
             <div className="mt-6 text-center">
               <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                onClick={() => {
+                  if (isAuthenticated) {
+                    navigate('/market-prices');
+                  } else {
+                    setShowAuthNotification(true);
+                  }
+                }}
                 className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-lg transition-colors inline-flex items-center"
               >
                 <TrendingUp className="w-5 h-5 mr-2" />

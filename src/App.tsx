@@ -3,6 +3,7 @@ import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import MarketPrices from './pages/MarketPrices';
 import AIPredictions from './pages/AIPredictions';
+import EnhancedPredictions from './pages/EnhancedPredictions';
 import FarmProfile from './pages/FarmProfile';
 import Inventory from './pages/Inventory';
 import Financial from './pages/Financial';
@@ -11,6 +12,8 @@ import Settings from './pages/Settings';
 import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import AuthTest from './pages/AuthTest';
+import ProfileSetup from './pages/ProfileSetup';
 import { AuthProvider } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -28,6 +31,15 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/auth-test" element={<AuthTest />} />
+            <Route
+              path="/profile-setup"
+              element={
+                <ProtectedRoute>
+                  <ProfileSetup />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/dashboard"
               element={
@@ -49,6 +61,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <AIPredictions />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/enhanced-predictions"
+              element={
+                <ProtectedRoute>
+                  <EnhancedPredictions />
                 </ProtectedRoute>
               }
             />

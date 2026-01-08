@@ -230,4 +230,17 @@ describe('Market Prices - Property-Based Tests', () => {
           const maxSelection = 4;
           
           for (const index of selectedIndices) {
-            if (index < priceIds.length && selecte
+            if (index < priceIds.length && selected.length < maxSelection) {
+              selected.push(priceIds[index]);
+            }
+          }
+          
+          // Verify selection constraints
+          return selected.length <= maxSelection && 
+                 selected.every(id => priceIds.includes(id));
+        }
+      ),
+      { numRuns: 100 }
+    );
+  });
+});
