@@ -37,8 +37,16 @@ initializeMockData();
 // Simulate API delay
 const delay = (ms: number = 500) => new Promise(resolve => setTimeout(resolve, ms));
 
-// Import hybrid API service
-import { getMarketPrices, getCommodityPrices, getLatestPrices, getAPIStatus } from './hybridAPI';
+// Import hybrid API service - using improved version with circuit breaker
+import { 
+  getMarketPrices, 
+  getCommodityPrices, 
+  getLatestPrices, 
+  getAPIStatus,
+  forceHealthCheck,
+  resetCircuitBreaker,
+  clearAllCaches
+} from './hybridAPIImproved';
 
 // Market Prices API
 export const marketPricesAPI = {
@@ -123,6 +131,21 @@ export const marketPricesAPI = {
   // Get API status
   getStatus() {
     return getAPIStatus();
+  },
+  
+  // Force health check
+  async forceHealthCheck() {
+    return forceHealthCheck();
+  },
+  
+  // Reset circuit breaker (for debugging)
+  resetCircuitBreaker() {
+    resetCircuitBreaker();
+  },
+  
+  // Clear all caches
+  clearCaches() {
+    clearAllCaches();
   },
 };
 

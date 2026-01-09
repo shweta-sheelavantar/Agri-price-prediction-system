@@ -171,7 +171,7 @@ async def test_ml_model_integration():
         print(f"   Trend: {prediction['trend']}")
         print(f"   Confidence: {prediction['confidence']:.1%}")
         
-        # Test if prediction uses real or synthetic data
+        # Test if prediction uses real or agmarknet data
         if "factors" in prediction:
             print(f"   Influencing Factors: {len(prediction['factors'])}")
         

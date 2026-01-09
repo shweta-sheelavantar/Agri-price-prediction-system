@@ -5,8 +5,6 @@ import MarketPrices from './pages/MarketPrices';
 import AIPredictions from './pages/AIPredictions';
 import EnhancedPredictions from './pages/EnhancedPredictions';
 import FarmProfile from './pages/FarmProfile';
-import Inventory from './pages/Inventory';
-import Financial from './pages/Financial';
 import BuyerMatching from './pages/BuyerMatching';
 import Settings from './pages/Settings';
 import About from './pages/About';
@@ -24,7 +22,6 @@ function App() {
     <LanguageProvider>
       <AuthProvider>
         <Router>
-          {/* API Status Indicator */}
           <APIStatusIndicator />
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -77,22 +74,6 @@ function App() {
               element={
                 <ProtectedRoute>
                   <FarmProfile />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/inventory"
-              element={
-                <ProtectedRoute>
-                  <Inventory />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/financial"
-              element={
-                <ProtectedRoute>
-                  <Financial />
                 </ProtectedRoute>
               }
             />

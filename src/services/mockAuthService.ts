@@ -7,6 +7,19 @@ const mockUsers: Array<{ email: string; password: string; profile: UserProfile }
 // Mock session storage
 let currentSession: Session | null = null
 let currentUser: User | null = null
+let authStateCallbacks: Array<(event: string, session: Session | null) => void> = []
+
+// Helper function to trigger auth state change
+const triggerAuthStateChange = (event: string, session: Session | null) => {
+  console.log('🔄 Mock auth state change:', event, session ? 'User logged in' : 'User logged out');
+  authStateCallbacks.forEach(callback => {
+    try {
+      callback(event, session);
+    } catch (error) {
+      console.error('❌ Error in auth state callback:', error);
+    }
+  });
+};
 
 export class MockAuthService {
   // Sign up with email and password
@@ -68,7 +81,7 @@ export class MockAuthService {
       refresh_token: `mock-refresh-${Date.now()}`,
       expires_in: 3600,
       expires_at: Math.floor(Date.now() / 1000) + 3600,
-      token_type: 'bearer',
+      token_type: 'bearer' as const,
       user: mockUser
     }
 
@@ -78,6 +91,11 @@ export class MockAuthService {
     // Store in localStorage for persistence
     localStorage.setItem('mock-session', JSON.stringify(mockSession))
     localStorage.setItem('mock-user', JSON.stringify(mockUser))
+
+    // Trigger auth state change
+    setTimeout(() => {
+      triggerAuthStateChange('SIGNED_UP', mockSession);
+    }, 100);
 
     return { user: mockUser, session: mockSession }
   }
@@ -114,7 +132,7 @@ export class MockAuthService {
       refresh_token: `mock-refresh-${Date.now()}`,
       expires_in: 3600,
       expires_at: Math.floor(Date.now() / 1000) + 3600,
-      token_type: 'bearer',
+      token_type: 'bearer' as const,
       user: mockUser
     }
 
@@ -124,6 +142,11 @@ export class MockAuthService {
     // Store in localStorage for persistence
     localStorage.setItem('mock-session', JSON.stringify(mockSession))
     localStorage.setItem('mock-user', JSON.stringify(mockUser))
+
+    // Trigger auth state change
+    setTimeout(() => {
+      triggerAuthStateChange('SIGNED_IN', mockSession);
+    }, 100);
 
     return { user: mockUser, session: mockSession }
   }
@@ -138,7 +161,73 @@ export class MockAuthService {
   async verifyOtp(phone: string, token: string) {
     // For demo, accept any 6-digit token
     if (token.length === 6) {
-      return { user: null, session: null }
+      // Create a mock user for phone authentication
+      const userId = `mock-phone-user-${Date.now()}`;
+      const mockUser: User = {
+        id: userId,
+        email: '',
+        phone: phone,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+        aud: 'authenticated',
+        role: 'authenticated',
+        email_confirmed_at: null,
+        phone_confirmed_at: new Date().toISOString(),
+        confirmation_sent_at: new Date().toISOString(),
+        app_metadata: {},
+        user_metadata: {
+          phone: phone,
+        },
+        identities: [],
+        factors: []
+      };
+
+      const mockSession: Session = {
+        access_token: `mock-phone-token-${Date.now()}`,
+        refresh_token: `mock-phone-refresh-${Date.now()}`,
+        expires_in: 3600,
+        expires_at: Math.floor(Date.now() / 1000) + 3600,
+        token_type: 'bearer' as const,
+        user: mockUser
+      };
+
+      // Create a basic profile for phone user
+      const mockProfile: UserProfile = {
+        id: userId,
+        email: '',
+        phone: phone,
+        full_name: '',
+        profession: 'farmer',
+        land_size: 0,
+        land_unit: 'acre',
+        primary_crop: '',
+        crop_cycle: '',
+        equipment: [],
+        location: {
+          state: '',
+          district: '',
+          village: ''
+        },
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      };
+
+      // Store the user
+      mockUsers.push({ email: '', password: '', profile: mockProfile });
+
+      currentSession = mockSession;
+      currentUser = mockUser;
+
+      // Store in localStorage for persistence
+      localStorage.setItem('mock-session', JSON.stringify(mockSession));
+      localStorage.setItem('mock-user', JSON.stringify(mockUser));
+
+      // Trigger auth state change
+      setTimeout(() => {
+        triggerAuthStateChange('SIGNED_IN', mockSession);
+      }, 100);
+
+      return { user: mockUser, session: mockSession };
     }
     throw new Error('Invalid OTP')
   }
@@ -149,6 +238,11 @@ export class MockAuthService {
     currentUser = null
     localStorage.removeItem('mock-session')
     localStorage.removeItem('mock-user')
+    
+    // Trigger auth state change
+    setTimeout(() => {
+      triggerAuthStateChange('SIGNED_OUT', null);
+    }, 100);
   }
 
   // Get current user
@@ -207,31 +301,75 @@ export class MockAuthService {
 
   // Get user profile
   async getUserProfile(userId: string): Promise<UserProfile | null> {
-    const user = mockUsers.find(u => u.profile.id === userId)
-    return user ? user.profile : null
+    // First try to get from localStorage (persisted data)
+    const storedProfile = localStorage.getItem(`mock-profile-${userId}`);
+    if (storedProfile) {
+      console.log('📋 Retrieved profile from localStorage for user:', userId);
+      return JSON.parse(storedProfile);
+    }
+    
+    // Fallback to in-memory storage
+    const user = mockUsers.find(u => u.profile.id === userId);
+    if (user) {
+      console.log('📋 Retrieved profile from memory for user:', userId);
+      return user.profile;
+    }
+    
+    console.log('⚠️ No profile found for user:', userId);
+    return null;
   }
 
   // Update user profile
   async updateUserProfile(userId: string, updates: Partial<UserProfile>) {
-    const userIndex = mockUsers.findIndex(u => u.profile.id === userId)
+    console.log('📝 Updating profile for user:', userId, updates);
+    
+    // Get existing profile or create new one
+    let existingProfile = await this.getUserProfile(userId);
+    
+    const updatedProfile: UserProfile = {
+      id: userId,
+      email: updates.email || existingProfile?.email || '',
+      phone: updates.phone || existingProfile?.phone || '',
+      full_name: updates.full_name || existingProfile?.full_name || '',
+      profession: updates.profession || existingProfile?.profession || 'farmer',
+      land_size: updates.land_size ?? existingProfile?.land_size ?? 0,
+      land_unit: updates.land_unit || existingProfile?.land_unit || 'acre',
+      primary_crop: updates.primary_crop || existingProfile?.primary_crop || '',
+      crop_cycle: updates.crop_cycle || existingProfile?.crop_cycle || '',
+      equipment: updates.equipment || existingProfile?.equipment || [],
+      location: updates.location || existingProfile?.location || { state: '', district: '', village: '' },
+      created_at: existingProfile?.created_at || new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    
+    // Update in-memory storage
+    const userIndex = mockUsers.findIndex(u => u.profile.id === userId);
     if (userIndex !== -1) {
-      mockUsers[userIndex].profile = {
-        ...mockUsers[userIndex].profile,
-        ...updates,
-        updated_at: new Date().toISOString(),
-      }
-      return mockUsers[userIndex].profile
+      mockUsers[userIndex].profile = updatedProfile;
     }
-    throw new Error('User not found')
+    
+    // Persist to localStorage
+    localStorage.setItem(`mock-profile-${userId}`, JSON.stringify(updatedProfile));
+    console.log('✅ Profile saved to localStorage:', updatedProfile);
+    
+    return updatedProfile;
   }
 
   // Listen to auth changes - mock implementation
   onAuthStateChange(callback: (event: string, session: Session | null) => void) {
-    // For mock, we'll just return a subscription object
+    // Add callback to the list
+    authStateCallbacks.push(callback);
+    
+    // Return subscription object that matches Supabase's interface
     return {
       data: {
         subscription: {
-          unsubscribe: () => {}
+          unsubscribe: () => {
+            const index = authStateCallbacks.indexOf(callback);
+            if (index > -1) {
+              authStateCallbacks.splice(index, 1);
+            }
+          }
         }
       }
     }

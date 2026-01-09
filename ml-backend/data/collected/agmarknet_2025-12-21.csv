@@ -1,0 +1,729 @@
+state,district,market,commodity,variety,grade,arrival_date,min_price,max_price,modal_price,fetch_timestamp,data_type
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Wheat,Standard,FAQ,21/12/2025,2148.13,2338.58,2256.15,2026-01-09T01:57:25.654454,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.659032,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Wheat,Standard,FAQ,21/12/2025,1957.7,2131.27,2056.15,2026-01-09T01:57:25.675125,agmarknet_data
+Bihar,Patna,Patna APMC,Wheat,Standard,FAQ,21/12/2025,1957.7,2131.27,2056.15,2026-01-09T01:57:25.693360,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Wheat,Standard,FAQ,21/12/2025,2076.72,2260.84,2181.15,2026-01-09T01:57:25.699177,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.707191,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Wheat,Standard,FAQ,21/12/2025,2108.27,2490.76,2306.15,2026-01-09T01:57:25.712582,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Wheat,Standard,FAQ,21/12/2025,2176.84,2571.76,2381.15,2026-01-09T01:57:25.717526,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Wheat,Standard,FAQ,21/12/2025,2211.41,2546.27,2431.15,2026-01-09T01:57:25.722117,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Wheat,Standard,FAQ,21/12/2025,2029.11,2209.01,2131.15,2026-01-09T01:57:25.726555,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Wheat,Standard,FAQ,21/12/2025,2108.27,2490.76,2306.15,2026-01-09T01:57:25.729837,agmarknet_data
+Kerala,Kochi,Kochi APMC,Wheat,Standard,FAQ,21/12/2025,2433.76,2649.54,2556.15,2026-01-09T01:57:25.733520,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Wheat,Standard,FAQ,21/12/2025,2108.27,2490.76,2306.15,2026-01-09T01:57:25.737309,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Wheat,Standard,FAQ,21/12/2025,2153.98,2544.76,2356.15,2026-01-09T01:57:25.740938,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.744292,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.747718,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.752462,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.756028,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Wheat,Standard,FAQ,21/12/2025,2005.31,2183.1,2106.15,2026-01-09T01:57:25.762390,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Wheat,Standard,FAQ,21/12/2025,2222.55,2625.76,2431.15,2026-01-09T01:57:25.768922,agmarknet_data
+Rajasthan,Kota,Kota APMC,Wheat,Standard,FAQ,21/12/2025,2062.56,2436.76,2256.15,2026-01-09T01:57:25.779271,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.788859,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Wheat,Standard,FAQ,21/12/2025,2222.55,2625.76,2431.15,2026-01-09T01:57:25.792494,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Wheat,Standard,FAQ,21/12/2025,2195.73,2390.41,2306.15,2026-01-09T01:57:25.796908,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Wheat,Standard,FAQ,21/12/2025,2097.71,2415.35,2306.15,2026-01-09T01:57:25.800309,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Wheat,Standard,FAQ,21/12/2025,1994.0,2355.75,2181.15,2026-01-09T01:57:25.803861,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Wheat,Standard,FAQ,21/12/2025,2143.19,2467.72,2356.15,2026-01-09T01:57:25.807670,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Wheat,Standard,FAQ,21/12/2025,1994.0,2355.75,2181.15,2026-01-09T01:57:25.811253,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Paddy(Common),Standard,FAQ,21/12/2025,2255.72,2455.72,2369.16,2026-01-09T01:57:25.814423,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.820741,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Paddy(Common),Standard,FAQ,21/12/2025,2088.15,2273.29,2193.16,2026-01-09T01:57:25.829493,agmarknet_data
+Bihar,Patna,Patna APMC,Paddy(Common),Standard,FAQ,21/12/2025,2088.15,2273.29,2193.16,2026-01-09T01:57:25.834891,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Paddy(Common),Standard,FAQ,21/12/2025,2192.88,2387.3,2303.16,2026-01-09T01:57:25.840813,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.845025,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Paddy(Common),Standard,FAQ,21/12/2025,2206.1,2606.33,2413.16,2026-01-09T01:57:25.850533,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Paddy(Common),Standard,FAQ,21/12/2025,2266.44,2677.61,2479.16,2026-01-09T01:57:25.858498,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2295.1,2642.63,2523.16,2026-01-09T01:57:25.862194,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Paddy(Common),Standard,FAQ,21/12/2025,2150.99,2341.7,2259.16,2026-01-09T01:57:25.869646,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Paddy(Common),Standard,FAQ,21/12/2025,2206.1,2606.33,2413.16,2026-01-09T01:57:25.874481,agmarknet_data
+Kerala,Kochi,Kochi APMC,Paddy(Common),Standard,FAQ,21/12/2025,2507.08,2729.36,2633.16,2026-01-09T01:57:25.879217,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Paddy(Common),Standard,FAQ,21/12/2025,2206.1,2606.33,2413.16,2026-01-09T01:57:25.886781,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Paddy(Common),Standard,FAQ,21/12/2025,2246.32,2653.85,2457.16,2026-01-09T01:57:25.895969,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.901080,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.905213,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.908888,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.912109,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Paddy(Common),Standard,FAQ,21/12/2025,2130.04,2318.89,2237.16,2026-01-09T01:57:25.915181,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Paddy(Common),Standard,FAQ,21/12/2025,2306.66,2725.14,2523.16,2026-01-09T01:57:25.919535,agmarknet_data
+Rajasthan,Kota,Kota APMC,Paddy(Common),Standard,FAQ,21/12/2025,2165.87,2558.81,2369.16,2026-01-09T01:57:25.928639,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.934054,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Paddy(Common),Standard,FAQ,21/12/2025,2306.66,2725.14,2523.16,2026-01-09T01:57:25.938423,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Paddy(Common),Standard,FAQ,21/12/2025,2297.61,2501.32,2413.16,2026-01-09T01:57:25.943778,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2195.04,2527.42,2413.16,2026-01-09T01:57:25.949742,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Paddy(Common),Standard,FAQ,21/12/2025,2105.54,2487.53,2303.16,2026-01-09T01:57:25.953445,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Paddy(Common),Standard,FAQ,21/12/2025,2235.06,2573.51,2457.16,2026-01-09T01:57:25.962520,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Paddy(Common),Standard,FAQ,21/12/2025,2105.54,2487.53,2303.16,2026-01-09T01:57:25.966347,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Rice,Standard,FAQ,21/12/2025,3780.93,4116.16,3971.07,2026-01-09T01:57:25.970490,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:25.983266,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Rice,Standard,FAQ,21/12/2025,3514.34,3825.93,3691.07,2026-01-09T01:57:25.990439,agmarknet_data
+Bihar,Patna,Patna APMC,Rice,Standard,FAQ,21/12/2025,3514.34,3825.93,3691.07,2026-01-09T01:57:25.997582,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Rice,Standard,FAQ,21/12/2025,3680.96,4007.32,3866.07,2026-01-09T01:57:26.001165,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:26.005190,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Rice,Standard,FAQ,21/12/2025,3694.33,4364.56,4041.07,2026-01-09T01:57:26.008520,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Rice,Standard,FAQ,21/12/2025,3790.32,4477.96,4146.07,2026-01-09T01:57:26.012749,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Rice,Standard,FAQ,21/12/2025,3835.0,4415.71,4216.07,2026-01-09T01:57:26.016174,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Rice,Standard,FAQ,21/12/2025,3614.31,3934.76,3796.07,2026-01-09T01:57:26.019412,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Rice,Standard,FAQ,21/12/2025,3694.33,4364.56,4041.07,2026-01-09T01:57:26.022496,agmarknet_data
+Kerala,Kochi,Kochi APMC,Rice,Standard,FAQ,21/12/2025,4180.82,4551.5,4391.07,2026-01-09T01:57:26.027377,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Rice,Standard,FAQ,21/12/2025,3694.33,4364.56,4041.07,2026-01-09T01:57:26.031327,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Rice,Standard,FAQ,21/12/2025,3758.32,4440.16,4111.07,2026-01-09T01:57:26.034896,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:26.039110,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:26.042600,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:26.047731,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:26.051987,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Rice,Standard,FAQ,21/12/2025,3580.99,3898.48,3761.07,2026-01-09T01:57:26.055430,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Rice,Standard,FAQ,21/12/2025,3854.31,4553.57,4216.07,2026-01-09T01:57:26.059926,agmarknet_data
+Rajasthan,Kota,Kota APMC,Rice,Standard,FAQ,21/12/2025,3630.34,4288.96,3971.07,2026-01-09T01:57:26.063910,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:26.068181,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Rice,Standard,FAQ,21/12/2025,3854.31,4553.57,4216.07,2026-01-09T01:57:26.071815,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Rice,Standard,FAQ,21/12/2025,3847.58,4188.71,4041.07,2026-01-09T01:57:26.077480,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Rice,Standard,FAQ,21/12/2025,3675.81,4232.42,4041.07,2026-01-09T01:57:26.082013,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Rice,Standard,FAQ,21/12/2025,3534.35,4175.55,3866.07,2026-01-09T01:57:26.086066,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Rice,Standard,FAQ,21/12/2025,3739.49,4305.74,4111.07,2026-01-09T01:57:26.090769,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Rice,Standard,FAQ,21/12/2025,3534.35,4175.55,3866.07,2026-01-09T01:57:26.095255,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Maize,Standard,FAQ,21/12/2025,1998.12,2175.28,2098.61,2026-01-09T01:57:26.099680,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.104522,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Maize,Standard,FAQ,21/12/2025,1838.17,2001.14,1930.61,2026-01-09T01:57:26.109542,agmarknet_data
+Bihar,Patna,Patna APMC,Maize,Standard,FAQ,21/12/2025,1838.17,2001.14,1930.61,2026-01-09T01:57:26.113164,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Maize,Standard,FAQ,21/12/2025,1938.14,2109.98,2035.61,2026-01-09T01:57:26.116810,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.121857,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Maize,Standard,FAQ,21/12/2025,1956.93,2311.96,2140.61,2026-01-09T01:57:26.125449,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Maize,Standard,FAQ,21/12/2025,2014.53,2380.01,2203.61,2026-01-09T01:57:26.129810,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Maize,Standard,FAQ,21/12/2025,2042.63,2351.94,2245.61,2026-01-09T01:57:26.133107,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Maize,Standard,FAQ,21/12/2025,1898.15,2066.44,1993.61,2026-01-09T01:57:26.137434,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Maize,Standard,FAQ,21/12/2025,1956.93,2311.96,2140.61,2026-01-09T01:57:26.141581,agmarknet_data
+Kerala,Kochi,Kochi APMC,Maize,Standard,FAQ,21/12/2025,2238.06,2436.49,2350.61,2026-01-09T01:57:26.145325,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Maize,Standard,FAQ,21/12/2025,1956.93,2311.96,2140.61,2026-01-09T01:57:26.149303,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Maize,Standard,FAQ,21/12/2025,1995.33,2357.32,2182.61,2026-01-09T01:57:26.152737,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.157788,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.161437,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.170604,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.178769,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Maize,Standard,FAQ,21/12/2025,1878.16,2044.68,1972.61,2026-01-09T01:57:26.197331,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Maize,Standard,FAQ,21/12/2025,2052.92,2425.37,2245.61,2026-01-09T01:57:26.212441,agmarknet_data
+Rajasthan,Kota,Kota APMC,Maize,Standard,FAQ,21/12/2025,1918.54,2266.6,2098.61,2026-01-09T01:57:26.220935,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.224704,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Maize,Standard,FAQ,21/12/2025,2052.92,2425.37,2245.61,2026-01-09T01:57:26.235972,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Maize,Standard,FAQ,21/12/2025,2038.11,2218.81,2140.61,2026-01-09T01:57:26.241254,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Maize,Standard,FAQ,21/12/2025,1947.13,2241.97,2140.61,2026-01-09T01:57:26.244788,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Maize,Standard,FAQ,21/12/2025,1860.94,2198.56,2035.61,2026-01-09T01:57:26.247995,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Maize,Standard,FAQ,21/12/2025,1985.33,2285.96,2182.61,2026-01-09T01:57:26.254026,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Maize,Standard,FAQ,21/12/2025,1860.94,2198.56,2035.61,2026-01-09T01:57:26.257763,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Soyabean,Standard,FAQ,21/12/2025,4852.84,5283.1,5096.88,2026-01-09T01:57:26.261888,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.265117,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Soyabean,Standard,FAQ,21/12/2025,4487.23,4885.07,4712.88,2026-01-09T01:57:26.269026,agmarknet_data
+Bihar,Patna,Patna APMC,Soyabean,Standard,FAQ,21/12/2025,4487.23,4885.07,4712.88,2026-01-09T01:57:26.272720,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Soyabean,Standard,FAQ,21/12/2025,4715.73,5133.84,4952.88,2026-01-09T01:57:26.275903,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.279116,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Soyabean,Standard,FAQ,21/12/2025,4747.31,5608.57,5192.88,2026-01-09T01:57:26.283110,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Soyabean,Standard,FAQ,21/12/2025,4878.95,5764.1,5336.88,2026-01-09T01:57:26.286772,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Soyabean,Standard,FAQ,21/12/2025,4941.82,5690.13,5432.88,2026-01-09T01:57:26.289977,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Soyabean,Standard,FAQ,21/12/2025,4624.33,5034.33,4856.88,2026-01-09T01:57:26.293224,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Soyabean,Standard,FAQ,21/12/2025,4747.31,5608.57,5192.88,2026-01-09T01:57:26.296511,agmarknet_data
+Kerala,Kochi,Kochi APMC,Soyabean,Standard,FAQ,21/12/2025,5401.26,5880.14,5672.88,2026-01-09T01:57:26.301650,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Soyabean,Standard,FAQ,21/12/2025,4747.31,5608.57,5192.88,2026-01-09T01:57:26.305052,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Soyabean,Standard,FAQ,21/12/2025,4835.07,5712.25,5288.88,2026-01-09T01:57:26.308917,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.312323,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.316032,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.319148,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.323440,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Soyabean,Standard,FAQ,21/12/2025,4578.63,4984.58,4808.88,2026-01-09T01:57:26.328766,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Soyabean,Standard,FAQ,21/12/2025,4966.72,5867.78,5432.88,2026-01-09T01:57:26.335654,agmarknet_data
+Rajasthan,Kota,Kota APMC,Soyabean,Standard,FAQ,21/12/2025,4659.55,5504.89,5096.88,2026-01-09T01:57:26.339072,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.343015,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Soyabean,Standard,FAQ,21/12/2025,4966.72,5867.78,5432.88,2026-01-09T01:57:26.346844,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Soyabean,Standard,FAQ,21/12/2025,4944.24,5382.6,5192.88,2026-01-09T01:57:26.351233,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Soyabean,Standard,FAQ,21/12/2025,4723.52,5438.77,5192.88,2026-01-09T01:57:26.354946,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Soyabean,Standard,FAQ,21/12/2025,4527.9,5349.36,4952.88,2026-01-09T01:57:26.358434,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Soyabean,Standard,FAQ,21/12/2025,4810.84,5539.31,5288.88,2026-01-09T01:57:26.362576,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Soyabean,Standard,FAQ,21/12/2025,4527.9,5349.36,4952.88,2026-01-09T01:57:26.366119,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Cotton,Standard,FAQ,21/12/2025,7461.63,8123.19,7836.87,2026-01-09T01:57:26.369319,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.372470,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Cotton,Standard,FAQ,21/12/2025,6928.44,7542.73,7276.87,2026-01-09T01:57:26.376247,agmarknet_data
+Bihar,Patna,Patna APMC,Cotton,Standard,FAQ,21/12/2025,6928.44,7542.73,7276.87,2026-01-09T01:57:26.380260,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Cotton,Standard,FAQ,21/12/2025,7261.69,7905.51,7626.87,2026-01-09T01:57:26.384185,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.387507,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Cotton,Standard,FAQ,21/12/2025,7292.41,8615.41,7976.87,2026-01-09T01:57:26.392127,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Cotton,Standard,FAQ,21/12/2025,7484.4,8842.22,8186.87,2026-01-09T01:57:26.395559,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Cotton,Standard,FAQ,21/12/2025,7574.23,8721.15,8326.87,2026-01-09T01:57:26.403976,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Cotton,Standard,FAQ,21/12/2025,7128.39,7760.4,7486.87,2026-01-09T01:57:26.408758,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Cotton,Standard,FAQ,21/12/2025,7292.41,8615.41,7976.87,2026-01-09T01:57:26.413086,agmarknet_data
+Kerala,Kochi,Kochi APMC,Cotton,Standard,FAQ,21/12/2025,8261.41,8993.88,8676.87,2026-01-09T01:57:26.416725,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Cotton,Standard,FAQ,21/12/2025,7292.41,8615.41,7976.87,2026-01-09T01:57:26.426159,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Cotton,Standard,FAQ,21/12/2025,7420.4,8766.62,8116.87,2026-01-09T01:57:26.432621,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.438930,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.443082,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.447803,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.451026,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Cotton,Standard,FAQ,21/12/2025,7061.74,7687.84,7416.87,2026-01-09T01:57:26.455053,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Cotton,Standard,FAQ,21/12/2025,7612.38,8993.43,8326.87,2026-01-09T01:57:26.460182,agmarknet_data
+Rajasthan,Kota,Kota APMC,Cotton,Standard,FAQ,21/12/2025,7164.43,8464.2,7836.87,2026-01-09T01:57:26.463917,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.467564,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Cotton,Standard,FAQ,21/12/2025,7612.38,8993.43,8326.87,2026-01-09T01:57:26.471008,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Cotton,Standard,FAQ,21/12/2025,7594.93,8268.3,7976.87,2026-01-09T01:57:26.476666,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Cotton,Standard,FAQ,21/12/2025,7255.86,8354.58,7976.87,2026-01-09T01:57:26.480936,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Cotton,Standard,FAQ,21/12/2025,6972.45,8237.39,7626.87,2026-01-09T01:57:26.487841,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Cotton,Standard,FAQ,21/12/2025,7383.21,8501.21,8116.87,2026-01-09T01:57:26.497853,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Cotton,Standard,FAQ,21/12/2025,6972.45,8237.39,7626.87,2026-01-09T01:57:26.508335,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Groundnut,Standard,FAQ,21/12/2025,5062.47,5511.31,5317.06,2026-01-09T01:57:26.518998,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.523578,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Groundnut,Standard,FAQ,21/12/2025,4643.54,5055.24,4877.06,2026-01-09T01:57:26.527256,agmarknet_data
+Bihar,Patna,Patna APMC,Groundnut,Standard,FAQ,21/12/2025,4643.54,5055.24,4877.06,2026-01-09T01:57:26.536591,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Groundnut,Standard,FAQ,21/12/2025,4905.37,5340.29,5152.06,2026-01-09T01:57:26.540630,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.545102,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Groundnut,Standard,FAQ,21/12/2025,4961.39,5861.49,5427.06,2026-01-09T01:57:26.548618,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Groundnut,Standard,FAQ,21/12/2025,5112.23,6039.7,5592.06,2026-01-09T01:57:26.552829,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Groundnut,Standard,FAQ,21/12/2025,5186.67,5972.05,5702.06,2026-01-09T01:57:26.557153,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Groundnut,Standard,FAQ,21/12/2025,4800.64,5226.27,5042.06,2026-01-09T01:57:26.560647,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Groundnut,Standard,FAQ,21/12/2025,4961.39,5861.49,5427.06,2026-01-09T01:57:26.567444,agmarknet_data
+Kerala,Kochi,Kochi APMC,Groundnut,Standard,FAQ,21/12/2025,5690.87,6195.43,5977.06,2026-01-09T01:57:26.574447,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Groundnut,Standard,FAQ,21/12/2025,4961.39,5861.49,5427.06,2026-01-09T01:57:26.581845,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Groundnut,Standard,FAQ,21/12/2025,5061.95,5980.29,5537.06,2026-01-09T01:57:26.586400,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.592538,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.596405,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.600792,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.604082,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Groundnut,Standard,FAQ,21/12/2025,4748.27,5169.26,4987.06,2026-01-09T01:57:26.619660,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Groundnut,Standard,FAQ,21/12/2025,5212.79,6158.5,5702.06,2026-01-09T01:57:26.623156,agmarknet_data
+Rajasthan,Kota,Kota APMC,Groundnut,Standard,FAQ,21/12/2025,4860.83,5742.68,5317.06,2026-01-09T01:57:26.627502,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.631504,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Groundnut,Standard,FAQ,21/12/2025,5212.79,6158.5,5702.06,2026-01-09T01:57:26.637125,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Groundnut,Standard,FAQ,21/12/2025,5167.2,5625.33,5427.06,2026-01-09T01:57:26.640788,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Groundnut,Standard,FAQ,21/12/2025,4936.52,5684.03,5427.06,2026-01-09T01:57:26.647377,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Groundnut,Standard,FAQ,21/12/2025,4709.99,5564.48,5152.06,2026-01-09T01:57:26.656938,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Groundnut,Standard,FAQ,21/12/2025,5036.58,5799.24,5537.06,2026-01-09T01:57:26.660918,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Groundnut,Standard,FAQ,21/12/2025,4709.99,5564.48,5152.06,2026-01-09T01:57:26.667321,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Onion,Standard,FAQ,21/12/2025,1893.23,2061.08,1988.44,2026-01-09T01:57:26.671388,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.675330,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Onion,Standard,FAQ,21/12/2025,1702.8,1853.78,1788.44,2026-01-09T01:57:26.679743,agmarknet_data
+Bihar,Patna,Patna APMC,Onion,Standard,FAQ,21/12/2025,1702.8,1853.78,1788.44,2026-01-09T01:57:26.683756,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Onion,Standard,FAQ,21/12/2025,1821.82,1983.34,1913.44,2026-01-09T01:57:26.687873,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.704805,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Onion,Standard,FAQ,21/12/2025,1863.53,2201.61,2038.44,2026-01-09T01:57:26.723875,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Onion,Standard,FAQ,21/12/2025,1932.09,2282.62,2113.44,2026-01-09T01:57:26.731429,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Onion,Standard,FAQ,21/12/2025,1967.89,2265.88,2163.44,2026-01-09T01:57:26.741476,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Onion,Standard,FAQ,21/12/2025,1774.21,1931.52,1863.44,2026-01-09T01:57:26.745566,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Onion,Standard,FAQ,21/12/2025,1863.53,2201.61,2038.44,2026-01-09T01:57:26.748862,agmarknet_data
+Kerala,Kochi,Kochi APMC,Onion,Standard,FAQ,21/12/2025,2178.86,2372.04,2288.44,2026-01-09T01:57:26.752041,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Onion,Standard,FAQ,21/12/2025,1863.53,2201.61,2038.44,2026-01-09T01:57:26.758678,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Onion,Standard,FAQ,21/12/2025,1909.24,2255.61,2088.44,2026-01-09T01:57:26.765151,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.769528,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.773260,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.777126,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.780819,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Onion,Standard,FAQ,21/12/2025,1750.41,1905.6,1838.44,2026-01-09T01:57:26.784191,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Onion,Standard,FAQ,21/12/2025,1977.8,2336.62,2163.44,2026-01-09T01:57:26.787554,agmarknet_data
+Rajasthan,Kota,Kota APMC,Onion,Standard,FAQ,21/12/2025,1817.82,2147.61,1988.44,2026-01-09T01:57:26.790695,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.794138,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Onion,Standard,FAQ,21/12/2025,1977.8,2336.62,2163.44,2026-01-09T01:57:26.797352,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Onion,Standard,FAQ,21/12/2025,1940.83,2112.91,2038.44,2026-01-09T01:57:26.800728,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Onion,Standard,FAQ,21/12/2025,1854.19,2134.96,2038.44,2026-01-09T01:57:26.805218,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Onion,Standard,FAQ,21/12/2025,1749.25,2066.61,1913.44,2026-01-09T01:57:26.808441,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Onion,Standard,FAQ,21/12/2025,1899.67,2187.32,2088.44,2026-01-09T01:57:26.812749,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Onion,Standard,FAQ,21/12/2025,1749.25,2066.61,1913.44,2026-01-09T01:57:26.817258,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Tomato,Standard,FAQ,21/12/2025,2257.09,2457.2,2370.59,2026-01-09T01:57:26.821273,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.827006,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Tomato,Standard,FAQ,21/12/2025,2028.58,2208.43,2130.59,2026-01-09T01:57:26.832283,agmarknet_data
+Bihar,Patna,Patna APMC,Tomato,Standard,FAQ,21/12/2025,2028.58,2208.43,2130.59,2026-01-09T01:57:26.835663,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Tomato,Standard,FAQ,21/12/2025,2171.4,2363.91,2280.59,2026-01-09T01:57:26.838794,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.841835,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Tomato,Standard,FAQ,21/12/2025,2222.04,2625.16,2430.59,2026-01-09T01:57:26.845703,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Tomato,Standard,FAQ,21/12/2025,2304.31,2722.36,2520.59,2026-01-09T01:57:26.855584,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Tomato,Standard,FAQ,21/12/2025,2347.34,2702.78,2580.59,2026-01-09T01:57:26.863258,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Tomato,Standard,FAQ,21/12/2025,2114.27,2301.72,2220.59,2026-01-09T01:57:26.867764,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Tomato,Standard,FAQ,21/12/2025,2222.04,2625.16,2430.59,2026-01-09T01:57:26.872497,agmarknet_data
+Kerala,Kochi,Kochi APMC,Tomato,Standard,FAQ,21/12/2025,2599.85,2830.35,2730.59,2026-01-09T01:57:26.883896,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Tomato,Standard,FAQ,21/12/2025,2222.04,2625.16,2430.59,2026-01-09T01:57:26.890716,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Tomato,Standard,FAQ,21/12/2025,2276.89,2689.96,2490.59,2026-01-09T01:57:26.904265,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.913799,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.921846,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.935288,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.944083,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Tomato,Standard,FAQ,21/12/2025,2085.7,2270.63,2190.59,2026-01-09T01:57:26.948048,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Tomato,Standard,FAQ,21/12/2025,2359.17,2787.17,2580.59,2026-01-09T01:57:26.952907,agmarknet_data
+Rajasthan,Kota,Kota APMC,Tomato,Standard,FAQ,21/12/2025,2167.18,2560.36,2370.59,2026-01-09T01:57:26.957520,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.962168,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Tomato,Standard,FAQ,21/12/2025,2359.17,2787.17,2580.59,2026-01-09T01:57:26.965600,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Tomato,Standard,FAQ,21/12/2025,2314.21,2519.39,2430.59,2026-01-09T01:57:26.968798,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Tomato,Standard,FAQ,21/12/2025,2210.9,2545.68,2430.59,2026-01-09T01:57:26.973786,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Tomato,Standard,FAQ,21/12/2025,2084.91,2463.15,2280.59,2026-01-09T01:57:26.980635,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Tomato,Standard,FAQ,21/12/2025,2265.48,2608.52,2490.59,2026-01-09T01:57:26.991059,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Tomato,Standard,FAQ,21/12/2025,2084.91,2463.15,2280.59,2026-01-09T01:57:27.001144,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Potato,Standard,FAQ,21/12/2025,1957.29,2130.83,2055.72,2026-01-09T01:57:27.009909,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.013605,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Potato,Standard,FAQ,21/12/2025,1804.95,1964.98,1895.72,2026-01-09T01:57:27.017040,agmarknet_data
+Bihar,Patna,Patna APMC,Potato,Standard,FAQ,21/12/2025,1804.95,1964.98,1895.72,2026-01-09T01:57:27.022627,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Potato,Standard,FAQ,21/12/2025,1900.16,2068.63,1995.72,2026-01-09T01:57:27.026401,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.029574,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Potato,Standard,FAQ,21/12/2025,1915.9,2263.48,2095.72,2026-01-09T01:57:27.032814,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Potato,Standard,FAQ,21/12/2025,1970.75,2328.29,2155.72,2026-01-09T01:57:27.035891,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Potato,Standard,FAQ,21/12/2025,1997.26,2299.69,2195.72,2026-01-09T01:57:27.039046,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Potato,Standard,FAQ,21/12/2025,1862.08,2027.17,1955.72,2026-01-09T01:57:27.042113,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Potato,Standard,FAQ,21/12/2025,1915.9,2263.48,2095.72,2026-01-09T01:57:27.045934,agmarknet_data
+Kerala,Kochi,Kochi APMC,Potato,Standard,FAQ,21/12/2025,2185.8,2379.6,2295.72,2026-01-09T01:57:27.055169,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Potato,Standard,FAQ,21/12/2025,1915.9,2263.48,2095.72,2026-01-09T01:57:27.059713,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Potato,Standard,FAQ,21/12/2025,1952.47,2306.68,2135.72,2026-01-09T01:57:27.063378,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.068426,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.072931,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.076463,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.080921,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Potato,Standard,FAQ,21/12/2025,1843.04,2006.44,1935.72,2026-01-09T01:57:27.088755,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Potato,Standard,FAQ,21/12/2025,2007.32,2371.49,2195.72,2026-01-09T01:57:27.092321,agmarknet_data
+Rajasthan,Kota,Kota APMC,Potato,Standard,FAQ,21/12/2025,1879.33,2220.28,2055.72,2026-01-09T01:57:27.096681,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.101450,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Potato,Standard,FAQ,21/12/2025,2007.32,2371.49,2195.72,2026-01-09T01:57:27.109649,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Potato,Standard,FAQ,21/12/2025,1995.38,2172.29,2095.72,2026-01-09T01:57:27.114325,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Potato,Standard,FAQ,21/12/2025,1906.3,2194.95,2095.72,2026-01-09T01:57:27.120493,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Potato,Standard,FAQ,21/12/2025,1824.48,2155.48,1995.72,2026-01-09T01:57:27.124182,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Potato,Standard,FAQ,21/12/2025,1942.68,2236.85,2135.72,2026-01-09T01:57:27.127649,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Potato,Standard,FAQ,21/12/2025,1824.48,2155.48,1995.72,2026-01-09T01:57:27.130772,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6700.51,7294.58,7037.47,2026-01-09T01:57:27.142859,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.147612,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6167.32,6714.13,6477.47,2026-01-09T01:57:27.154890,agmarknet_data
+Bihar,Patna,Patna APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6167.32,6714.13,6477.47,2026-01-09T01:57:27.165764,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6500.56,7076.91,6827.47,2026-01-09T01:57:27.170259,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.175608,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6561.61,7752.02,7177.47,2026-01-09T01:57:27.184890,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6753.59,7978.83,7387.47,2026-01-09T01:57:27.192354,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6847.09,7883.9,7527.47,2026-01-09T01:57:27.203207,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6367.27,6931.8,6687.47,2026-01-09T01:57:27.213659,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6561.61,7752.02,7177.47,2026-01-09T01:57:27.217136,agmarknet_data
+Kerala,Kochi,Kochi APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,7500.29,8165.27,7877.47,2026-01-09T01:57:27.221338,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6561.61,7752.02,7177.47,2026-01-09T01:57:27.224894,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6689.6,7903.23,7317.47,2026-01-09T01:57:27.233296,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.236663,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.240798,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.244445,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.248597,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6300.62,6859.24,6617.47,2026-01-09T01:57:27.252765,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6881.58,8130.04,7527.47,2026-01-09T01:57:27.273182,agmarknet_data
+Rajasthan,Kota,Kota APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6433.62,7600.82,7037.47,2026-01-09T01:57:27.288957,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.302501,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6881.58,8130.04,7527.47,2026-01-09T01:57:27.308777,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6833.81,7439.7,7177.47,2026-01-09T01:57:27.323731,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6528.72,7517.33,7177.47,2026-01-09T01:57:27.334373,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6241.64,7374.01,6827.47,2026-01-09T01:57:27.339007,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6656.07,7663.96,7317.47,2026-01-09T01:57:27.343008,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Green Gram(Moong)(Whole),Standard,FAQ,21/12/2025,6241.64,7374.01,6827.47,2026-01-09T01:57:27.346243,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5093.97,5545.61,5350.15,2026-01-09T01:57:27.349364,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.353801,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4675.04,5089.54,4910.15,2026-01-09T01:57:27.358531,agmarknet_data
+Bihar,Patna,Patna APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4675.04,5089.54,4910.15,2026-01-09T01:57:27.362098,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4936.87,5374.58,5185.15,2026-01-09T01:57:27.366551,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.370871,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4991.64,5897.23,5460.15,2026-01-09T01:57:27.379527,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5142.48,6075.43,5625.15,2026-01-09T01:57:27.387891,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5216.76,6006.71,5735.15,2026-01-09T01:57:27.391396,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4832.14,5260.56,5075.15,2026-01-09T01:57:27.400094,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4991.64,5897.23,5460.15,2026-01-09T01:57:27.410745,agmarknet_data
+Kerala,Kochi,Kochi APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5722.37,6229.72,6010.15,2026-01-09T01:57:27.421295,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4991.64,5897.23,5460.15,2026-01-09T01:57:27.431670,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5092.2,6016.03,5570.15,2026-01-09T01:57:27.445700,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.452120,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.456236,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.459811,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.464061,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4779.77,5203.55,5020.15,2026-01-09T01:57:27.468854,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5243.04,6194.24,5735.15,2026-01-09T01:57:27.472562,agmarknet_data
+Rajasthan,Kota,Kota APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4891.08,5778.42,5350.15,2026-01-09T01:57:27.476085,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.482157,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5243.04,6194.24,5735.15,2026-01-09T01:57:27.486598,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5198.71,5659.63,5460.15,2026-01-09T01:57:27.490017,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4966.62,5718.69,5460.15,2026-01-09T01:57:27.495637,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4740.23,5600.21,5185.15,2026-01-09T01:57:27.499844,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,5066.68,5833.89,5570.15,2026-01-09T01:57:27.504058,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Bengal Gram(Gram)(Whole),Standard,FAQ,21/12/2025,4740.23,5600.21,5185.15,2026-01-09T01:57:27.512825,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5539.88,6031.05,5818.47,2026-01-09T01:57:27.518151,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.529496,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5082.86,5533.51,5338.47,2026-01-09T01:57:27.539306,agmarknet_data
+Bihar,Patna,Patna APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5082.86,5533.51,5338.47,2026-01-09T01:57:27.543028,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5368.5,5844.47,5638.47,2026-01-09T01:57:27.549837,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.561520,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5428.92,6413.84,5938.47,2026-01-09T01:57:27.566775,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5593.48,6608.25,6118.47,2026-01-09T01:57:27.570730,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5674.6,6533.87,6238.47,2026-01-09T01:57:27.574057,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5254.24,5720.09,5518.47,2026-01-09T01:57:27.577814,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5428.92,6413.84,5938.47,2026-01-09T01:57:27.584436,agmarknet_data
+Kerala,Kochi,Kochi APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,6225.4,6777.36,6538.47,2026-01-09T01:57:27.593151,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5428.92,6413.84,5938.47,2026-01-09T01:57:27.602663,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5538.63,6543.45,6058.47,2026-01-09T01:57:27.614620,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.622260,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.625725,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.629554,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.633032,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5197.12,5657.9,5458.47,2026-01-09T01:57:27.636255,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5703.18,6737.86,6238.47,2026-01-09T01:57:27.648503,agmarknet_data
+Rajasthan,Kota,Kota APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5319.22,6284.24,5818.47,2026-01-09T01:57:27.656700,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.664710,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5703.18,6737.86,6238.47,2026-01-09T01:57:27.676925,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5654.13,6155.43,5938.47,2026-01-09T01:57:27.684197,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5401.71,6219.66,5938.47,2026-01-09T01:57:27.687999,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5154.67,6089.83,5638.47,2026-01-09T01:57:27.692363,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5510.87,6345.35,6058.47,2026-01-09T01:57:27.695983,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Lentil(Masur)(Whole),Standard,FAQ,21/12/2025,5154.67,6089.83,5638.47,2026-01-09T01:57:27.700034,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Mustard,Standard,FAQ,21/12/2025,4602.25,5010.29,4833.69,2026-01-09T01:57:27.704470,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.708250,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Mustard,Standard,FAQ,21/12/2025,4221.4,4595.67,4433.69,2026-01-09T01:57:27.712257,agmarknet_data
+Bihar,Patna,Patna APMC,Mustard,Standard,FAQ,21/12/2025,4221.4,4595.67,4433.69,2026-01-09T01:57:27.716051,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Mustard,Standard,FAQ,21/12/2025,4459.43,4854.81,4683.69,2026-01-09T01:57:27.720588,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.724039,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Mustard,Standard,FAQ,21/12/2025,4510.35,5328.63,4933.69,2026-01-09T01:57:27.733298,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Mustard,Standard,FAQ,21/12/2025,4647.48,5490.63,5083.69,2026-01-09T01:57:27.739061,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Mustard,Standard,FAQ,21/12/2025,4715.15,5429.14,5183.69,2026-01-09T01:57:27.742733,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Mustard,Standard,FAQ,21/12/2025,4364.22,4751.15,4583.69,2026-01-09T01:57:27.746149,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Mustard,Standard,FAQ,21/12/2025,4510.35,5328.63,4933.69,2026-01-09T01:57:27.750859,agmarknet_data
+Kerala,Kochi,Kochi APMC,Mustard,Standard,FAQ,21/12/2025,5173.52,5632.21,5433.69,2026-01-09T01:57:27.754336,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Mustard,Standard,FAQ,21/12/2025,4510.35,5328.63,4933.69,2026-01-09T01:57:27.776209,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Mustard,Standard,FAQ,21/12/2025,4601.77,5436.63,5033.69,2026-01-09T01:57:27.788585,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.794295,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.801462,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.807050,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.810687,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Mustard,Standard,FAQ,21/12/2025,4316.61,4699.33,4533.69,2026-01-09T01:57:27.815662,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Mustard,Standard,FAQ,21/12/2025,4738.9,5598.64,5183.69,2026-01-09T01:57:27.819107,agmarknet_data
+Rajasthan,Kota,Kota APMC,Mustard,Standard,FAQ,21/12/2025,4418.93,5220.62,4833.69,2026-01-09T01:57:27.823311,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.826683,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Mustard,Standard,FAQ,21/12/2025,4738.9,5598.64,5183.69,2026-01-09T01:57:27.830394,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Mustard,Standard,FAQ,21/12/2025,4697.46,5113.94,4933.69,2026-01-09T01:57:27.834207,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Mustard,Standard,FAQ,21/12/2025,4487.75,5167.3,4933.69,2026-01-09T01:57:27.837808,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Mustard,Standard,FAQ,21/12/2025,4281.81,5058.61,4683.69,2026-01-09T01:57:27.841266,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Mustard,Standard,FAQ,21/12/2025,4578.71,5272.04,5033.69,2026-01-09T01:57:27.844881,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Mustard,Standard,FAQ,21/12/2025,4281.81,5058.61,4683.69,2026-01-09T01:57:27.848253,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Sugarcane,Standard,FAQ,21/12/2025,384.47,418.56,403.81,2026-01-09T01:57:27.851444,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.854523,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Sugarcane,Standard,FAQ,21/12/2025,357.81,389.54,375.81,2026-01-09T01:57:27.858448,agmarknet_data
+Bihar,Patna,Patna APMC,Sugarcane,Standard,FAQ,21/12/2025,357.81,389.54,375.81,2026-01-09T01:57:27.862350,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Sugarcane,Standard,FAQ,21/12/2025,374.47,407.68,393.31,2026-01-09T01:57:27.866475,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.870055,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Sugarcane,Standard,FAQ,21/12/2025,375.56,443.69,410.81,2026-01-09T01:57:27.874026,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Sugarcane,Standard,FAQ,21/12/2025,385.16,455.03,421.31,2026-01-09T01:57:27.878456,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Sugarcane,Standard,FAQ,21/12/2025,389.59,448.59,428.31,2026-01-09T01:57:27.881762,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Sugarcane,Standard,FAQ,21/12/2025,367.81,400.42,386.31,2026-01-09T01:57:27.887091,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Sugarcane,Standard,FAQ,21/12/2025,375.56,443.69,410.81,2026-01-09T01:57:27.895789,agmarknet_data
+Kerala,Kochi,Kochi APMC,Sugarcane,Standard,FAQ,21/12/2025,424.46,462.09,445.81,2026-01-09T01:57:27.900201,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Sugarcane,Standard,FAQ,21/12/2025,375.56,443.69,410.81,2026-01-09T01:57:27.905664,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Sugarcane,Standard,FAQ,21/12/2025,381.96,451.25,417.81,2026-01-09T01:57:27.909315,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.913850,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.917786,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.934177,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.948508,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Sugarcane,Standard,FAQ,21/12/2025,364.48,396.79,382.81,2026-01-09T01:57:27.957018,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Sugarcane,Standard,FAQ,21/12/2025,391.56,462.59,428.31,2026-01-09T01:57:27.960731,agmarknet_data
+Rajasthan,Kota,Kota APMC,Sugarcane,Standard,FAQ,21/12/2025,369.16,436.13,403.81,2026-01-09T01:57:27.966709,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.974226,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Sugarcane,Standard,FAQ,21/12/2025,391.56,462.59,428.31,2026-01-09T01:57:27.983702,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Sugarcane,Standard,FAQ,21/12/2025,391.14,425.81,410.81,2026-01-09T01:57:27.987809,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Sugarcane,Standard,FAQ,21/12/2025,373.67,430.26,410.81,2026-01-09T01:57:27.996172,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Sugarcane,Standard,FAQ,21/12/2025,359.56,424.79,393.31,2026-01-09T01:57:28.002942,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Sugarcane,Standard,FAQ,21/12/2025,380.04,437.59,417.81,2026-01-09T01:57:28.007075,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Sugarcane,Standard,FAQ,21/12/2025,359.56,424.79,393.31,2026-01-09T01:57:28.011794,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Turmeric,Standard,FAQ,21/12/2025,7897.9,8598.14,8295.08,2026-01-09T01:57:28.016465,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.019916,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Turmeric,Standard,FAQ,21/12/2025,7288.54,7934.75,7655.08,2026-01-09T01:57:28.024699,agmarknet_data
+Bihar,Patna,Patna APMC,Turmeric,Standard,FAQ,21/12/2025,7288.54,7934.75,7655.08,2026-01-09T01:57:28.028953,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Turmeric,Standard,FAQ,21/12/2025,7669.39,8349.37,8055.08,2026-01-09T01:57:28.038031,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.041740,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Turmeric,Standard,FAQ,21/12/2025,7729.59,9131.9,8455.08,2026-01-09T01:57:28.045687,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Turmeric,Standard,FAQ,21/12/2025,7949.0,9391.11,8695.08,2026-01-09T01:57:28.050293,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Turmeric,Standard,FAQ,21/12/2025,8054.7,9274.37,8855.08,2026-01-09T01:57:28.054588,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Turmeric,Standard,FAQ,21/12/2025,7517.05,8183.52,7895.08,2026-01-09T01:57:28.059540,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Turmeric,Standard,FAQ,21/12/2025,7729.59,9131.9,8455.08,2026-01-09T01:57:28.063275,agmarknet_data
+Kerala,Kochi,Kochi APMC,Turmeric,Standard,FAQ,21/12/2025,8811.93,9593.21,9255.08,2026-01-09T01:57:28.067612,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Turmeric,Standard,FAQ,21/12/2025,7729.59,9131.9,8455.08,2026-01-09T01:57:28.074408,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Turmeric,Standard,FAQ,21/12/2025,7875.86,9304.71,8615.08,2026-01-09T01:57:28.079091,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.082439,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.087323,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.091519,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.095379,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Turmeric,Standard,FAQ,21/12/2025,7440.88,8100.6,7815.08,2026-01-09T01:57:28.100284,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Turmeric,Standard,FAQ,21/12/2025,8095.27,9563.92,8855.08,2026-01-09T01:57:28.104042,agmarknet_data
+Rajasthan,Kota,Kota APMC,Turmeric,Standard,FAQ,21/12/2025,7583.32,8959.09,8295.08,2026-01-09T01:57:28.109678,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.116117,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Turmeric,Standard,FAQ,21/12/2025,8095.27,9563.92,8855.08,2026-01-09T01:57:28.126132,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Turmeric,Standard,FAQ,21/12/2025,8050.24,8763.98,8455.08,2026-01-09T01:57:28.135986,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Turmeric,Standard,FAQ,21/12/2025,7690.85,8855.43,8455.08,2026-01-09T01:57:28.143787,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Turmeric,Standard,FAQ,21/12/2025,7363.91,8699.88,8055.08,2026-01-09T01:57:28.147320,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Turmeric,Standard,FAQ,21/12/2025,7836.39,9023.01,8615.08,2026-01-09T01:57:28.151130,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Turmeric,Standard,FAQ,21/12/2025,7363.91,8699.88,8055.08,2026-01-09T01:57:28.160873,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Chilli Red,Standard,FAQ,21/12/2025,10873.55,11837.61,11420.37,2026-01-09T01:57:28.165855,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.169449,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Chilli Red,Standard,FAQ,21/12/2025,9959.52,10842.54,10460.37,2026-01-09T01:57:28.173115,agmarknet_data
+Bihar,Patna,Patna APMC,Chilli Red,Standard,FAQ,21/12/2025,9959.52,10842.54,10460.37,2026-01-09T01:57:28.177646,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Chilli Red,Standard,FAQ,21/12/2025,10530.79,11464.46,11060.37,2026-01-09T01:57:28.181111,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.185453,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Chilli Red,Standard,FAQ,21/12/2025,10659.86,12593.78,11660.37,2026-01-09T01:57:28.189727,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Chilli Red,Standard,FAQ,21/12/2025,10988.97,12982.59,12020.37,2026-01-09T01:57:28.194172,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Chilli Red,Standard,FAQ,21/12/2025,11152.2,12840.91,12260.37,2026-01-09T01:57:28.199263,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Chilli Red,Standard,FAQ,21/12/2025,10302.28,11215.69,10820.37,2026-01-09T01:57:28.203387,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Chilli Red,Standard,FAQ,21/12/2025,10659.86,12593.78,11660.37,2026-01-09T01:57:28.207829,agmarknet_data
+Kerala,Kochi,Kochi APMC,Chilli Red,Standard,FAQ,21/12/2025,12244.6,13330.22,12860.37,2026-01-09T01:57:28.212285,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Chilli Red,Standard,FAQ,21/12/2025,10659.86,12593.78,11660.37,2026-01-09T01:57:28.216551,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Chilli Red,Standard,FAQ,21/12/2025,10879.26,12852.99,11900.37,2026-01-09T01:57:28.226583,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.229970,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.233794,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.237670,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.241731,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Chilli Red,Standard,FAQ,21/12/2025,10188.03,11091.31,10700.37,2026-01-09T01:57:28.247174,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Chilli Red,Standard,FAQ,21/12/2025,11208.37,13241.81,12260.37,2026-01-09T01:57:28.251014,agmarknet_data
+Rajasthan,Kota,Kota APMC,Chilli Red,Standard,FAQ,21/12/2025,10440.45,12334.56,11420.37,2026-01-09T01:57:28.255090,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.258524,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Chilli Red,Standard,FAQ,21/12/2025,11208.37,13241.81,12260.37,2026-01-09T01:57:28.262596,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Chilli Red,Standard,FAQ,21/12/2025,11102.06,12086.38,11660.37,2026-01-09T01:57:28.266393,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10606.43,12212.5,11660.37,2026-01-09T01:57:28.270142,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Chilli Red,Standard,FAQ,21/12/2025,10111.34,11945.75,11060.37,2026-01-09T01:57:28.274559,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Chilli Red,Standard,FAQ,21/12/2025,10824.74,12463.86,11900.37,2026-01-09T01:57:28.277894,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Chilli Red,Standard,FAQ,21/12/2025,10111.34,11945.75,11060.37,2026-01-09T01:57:28.281327,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Garlic,Standard,FAQ,21/12/2025,3299.53,3592.07,3465.46,2026-01-09T01:57:28.284452,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.288926,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Garlic,Standard,FAQ,21/12/2025,2994.85,3260.38,3145.46,2026-01-09T01:57:28.292862,agmarknet_data
+Bihar,Patna,Patna APMC,Garlic,Standard,FAQ,21/12/2025,2994.85,3260.38,3145.46,2026-01-09T01:57:28.296983,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Garlic,Standard,FAQ,21/12/2025,3185.28,3467.69,3345.46,2026-01-09T01:57:28.300710,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.304650,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Garlic,Standard,FAQ,21/12/2025,3241.24,3829.27,3545.46,2026-01-09T01:57:28.308459,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Garlic,Standard,FAQ,21/12/2025,3350.95,3958.88,3665.46,2026-01-09T01:57:28.312840,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Garlic,Standard,FAQ,21/12/2025,3406.92,3922.81,3745.46,2026-01-09T01:57:28.317037,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Garlic,Standard,FAQ,21/12/2025,3109.11,3384.76,3265.46,2026-01-09T01:57:28.339852,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Garlic,Standard,FAQ,21/12/2025,3241.24,3829.27,3545.46,2026-01-09T01:57:28.354410,agmarknet_data
+Kerala,Kochi,Kochi APMC,Garlic,Standard,FAQ,21/12/2025,3756.55,4089.61,3945.46,2026-01-09T01:57:28.358127,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Garlic,Standard,FAQ,21/12/2025,3241.24,3829.27,3545.46,2026-01-09T01:57:28.361304,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Garlic,Standard,FAQ,21/12/2025,3314.38,3915.68,3625.46,2026-01-09T01:57:28.366402,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.372912,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.378600,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.382059,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.386082,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Garlic,Standard,FAQ,21/12/2025,3071.02,3343.3,3225.46,2026-01-09T01:57:28.389471,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Garlic,Standard,FAQ,21/12/2025,3424.08,4045.28,3745.46,2026-01-09T01:57:28.393491,agmarknet_data
+Rajasthan,Kota,Kota APMC,Garlic,Standard,FAQ,21/12/2025,3168.11,3742.87,3465.46,2026-01-09T01:57:28.396800,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.401050,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Garlic,Standard,FAQ,21/12/2025,3424.08,4045.28,3745.46,2026-01-09T01:57:28.406567,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Garlic,Standard,FAQ,21/12/2025,3375.7,3674.99,3545.46,2026-01-09T01:57:28.410176,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Garlic,Standard,FAQ,21/12/2025,3225.0,3713.34,3545.46,2026-01-09T01:57:28.414052,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Garlic,Standard,FAQ,21/12/2025,3058.41,3613.26,3345.46,2026-01-09T01:57:28.417794,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Garlic,Standard,FAQ,21/12/2025,3297.77,3797.13,3625.46,2026-01-09T01:57:28.421725,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Garlic,Standard,FAQ,21/12/2025,3058.41,3613.26,3345.46,2026-01-09T01:57:28.425315,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Ginger(Green),Standard,FAQ,21/12/2025,3714.4,4043.72,3901.19,2026-01-09T01:57:28.429410,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.433647,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Ginger(Green),Standard,FAQ,21/12/2025,3447.81,3753.49,3621.19,2026-01-09T01:57:28.437138,agmarknet_data
+Bihar,Patna,Patna APMC,Ginger(Green),Standard,FAQ,21/12/2025,3447.81,3753.49,3621.19,2026-01-09T01:57:28.441329,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Ginger(Green),Standard,FAQ,21/12/2025,3614.43,3934.89,3796.19,2026-01-09T01:57:28.444732,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.449558,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Ginger(Green),Standard,FAQ,21/12/2025,3630.45,4289.08,3971.19,2026-01-09T01:57:28.454542,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Ginger(Green),Standard,FAQ,21/12/2025,3726.44,4402.49,4076.19,2026-01-09T01:57:28.458981,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3771.43,4342.52,4146.19,2026-01-09T01:57:28.463374,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Ginger(Green),Standard,FAQ,21/12/2025,3547.78,3862.33,3726.19,2026-01-09T01:57:28.467172,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Ginger(Green),Standard,FAQ,21/12/2025,3630.45,4289.08,3971.19,2026-01-09T01:57:28.470890,agmarknet_data
+Kerala,Kochi,Kochi APMC,Ginger(Green),Standard,FAQ,21/12/2025,4114.29,4479.07,4321.19,2026-01-09T01:57:28.474268,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Ginger(Green),Standard,FAQ,21/12/2025,3630.45,4289.08,3971.19,2026-01-09T01:57:28.478174,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Ginger(Green),Standard,FAQ,21/12/2025,3694.44,4364.69,4041.19,2026-01-09T01:57:28.483159,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.486678,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.490638,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.498629,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.503936,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Ginger(Green),Standard,FAQ,21/12/2025,3514.46,3826.05,3691.19,2026-01-09T01:57:28.507582,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Ginger(Green),Standard,FAQ,21/12/2025,3790.43,4478.09,4146.19,2026-01-09T01:57:28.513589,agmarknet_data
+Rajasthan,Kota,Kota APMC,Ginger(Green),Standard,FAQ,21/12/2025,3566.45,4213.48,3901.19,2026-01-09T01:57:28.518677,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.522518,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Ginger(Green),Standard,FAQ,21/12/2025,3790.43,4478.09,4146.19,2026-01-09T01:57:28.526182,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Ginger(Green),Standard,FAQ,21/12/2025,3781.05,4116.28,3971.19,2026-01-09T01:57:28.531589,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3612.25,4159.23,3971.19,2026-01-09T01:57:28.539675,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Ginger(Green),Standard,FAQ,21/12/2025,3470.46,4100.08,3796.19,2026-01-09T01:57:28.549050,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Ginger(Green),Standard,FAQ,21/12/2025,3675.92,4232.55,4041.19,2026-01-09T01:57:28.552760,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Ginger(Green),Standard,FAQ,21/12/2025,3470.46,4100.08,3796.19,2026-01-09T01:57:28.555995,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Cabbage,Standard,FAQ,21/12/2025,1513.8,1648.01,1589.92,2026-01-09T01:57:28.560698,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.573447,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Cabbage,Standard,FAQ,21/12/2025,1399.54,1523.63,1469.92,2026-01-09T01:57:28.581785,agmarknet_data
+Bihar,Patna,Patna APMC,Cabbage,Standard,FAQ,21/12/2025,1399.54,1523.63,1469.92,2026-01-09T01:57:28.595472,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Cabbage,Standard,FAQ,21/12/2025,1470.95,1601.37,1544.92,2026-01-09T01:57:28.602177,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.609898,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Cabbage,Standard,FAQ,21/12/2025,1480.93,1749.6,1619.92,2026-01-09T01:57:28.613901,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Cabbage,Standard,FAQ,21/12/2025,1522.07,1798.2,1664.92,2026-01-09T01:57:28.617679,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Cabbage,Standard,FAQ,21/12/2025,1541.73,1775.18,1694.92,2026-01-09T01:57:28.622673,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Cabbage,Standard,FAQ,21/12/2025,1442.39,1570.27,1514.92,2026-01-09T01:57:28.636504,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Cabbage,Standard,FAQ,21/12/2025,1480.93,1749.6,1619.92,2026-01-09T01:57:28.645147,agmarknet_data
+Kerala,Kochi,Kochi APMC,Cabbage,Standard,FAQ,21/12/2025,1685.18,1834.59,1769.92,2026-01-09T01:57:28.651146,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Cabbage,Standard,FAQ,21/12/2025,1480.93,1749.6,1619.92,2026-01-09T01:57:28.658472,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Cabbage,Standard,FAQ,21/12/2025,1508.35,1782.0,1649.92,2026-01-09T01:57:28.665837,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.671258,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.674806,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.679269,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.683820,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Cabbage,Standard,FAQ,21/12/2025,1428.11,1554.72,1499.92,2026-01-09T01:57:28.687568,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Cabbage,Standard,FAQ,21/12/2025,1549.49,1830.6,1694.92,2026-01-09T01:57:28.692234,agmarknet_data
+Rajasthan,Kota,Kota APMC,Cabbage,Standard,FAQ,21/12/2025,1453.5,1717.2,1589.92,2026-01-09T01:57:28.698573,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.706555,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Cabbage,Standard,FAQ,21/12/2025,1549.49,1830.6,1694.92,2026-01-09T01:57:28.713915,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Cabbage,Standard,FAQ,21/12/2025,1542.36,1679.11,1619.92,2026-01-09T01:57:28.717730,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Cabbage,Standard,FAQ,21/12/2025,1473.5,1696.63,1619.92,2026-01-09T01:57:28.721692,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Cabbage,Standard,FAQ,21/12/2025,1412.36,1668.59,1544.92,2026-01-09T01:57:28.725196,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Cabbage,Standard,FAQ,21/12/2025,1500.79,1728.05,1649.92,2026-01-09T01:57:28.728364,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Cabbage,Standard,FAQ,21/12/2025,1412.36,1668.59,1544.92,2026-01-09T01:57:28.731878,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Cauliflower,Standard,FAQ,21/12/2025,2099.6,2285.76,2205.19,2026-01-09T01:57:28.735608,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.738990,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Cauliflower,Standard,FAQ,21/12/2025,1947.26,2119.91,2045.19,2026-01-09T01:57:28.742853,agmarknet_data
+Bihar,Patna,Patna APMC,Cauliflower,Standard,FAQ,21/12/2025,1947.26,2119.91,2045.19,2026-01-09T01:57:28.746569,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.48,2223.56,2145.19,2026-01-09T01:57:28.753643,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.763443,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Cauliflower,Standard,FAQ,21/12/2025,2052.54,2424.92,2245.19,2026-01-09T01:57:28.782517,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Cauliflower,Standard,FAQ,21/12/2025,2107.39,2489.72,2305.19,2026-01-09T01:57:28.794825,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2133.22,2456.24,2345.19,2026-01-09T01:57:28.798240,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Cauliflower,Standard,FAQ,21/12/2025,2004.39,2182.1,2105.19,2026-01-09T01:57:28.809054,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Cauliflower,Standard,FAQ,21/12/2025,2052.54,2424.92,2245.19,2026-01-09T01:57:28.812757,agmarknet_data
+Kerala,Kochi,Kochi APMC,Cauliflower,Standard,FAQ,21/12/2025,2328.11,2534.52,2445.19,2026-01-09T01:57:28.816173,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Cauliflower,Standard,FAQ,21/12/2025,2052.54,2424.92,2245.19,2026-01-09T01:57:28.819412,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Cauliflower,Standard,FAQ,21/12/2025,2089.11,2468.12,2285.19,2026-01-09T01:57:28.822610,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.825707,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.828865,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.832040,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.835208,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Cauliflower,Standard,FAQ,21/12/2025,1985.35,2161.37,2085.19,2026-01-09T01:57:28.838358,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Cauliflower,Standard,FAQ,21/12/2025,2143.96,2532.92,2345.19,2026-01-09T01:57:28.841515,agmarknet_data
+Rajasthan,Kota,Kota APMC,Cauliflower,Standard,FAQ,21/12/2025,2015.97,2381.71,2205.19,2026-01-09T01:57:28.844805,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.849563,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Cauliflower,Standard,FAQ,21/12/2025,2143.96,2532.92,2345.19,2026-01-09T01:57:28.853157,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Cauliflower,Standard,FAQ,21/12/2025,2137.69,2327.22,2245.19,2026-01-09T01:57:28.856596,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2042.25,2351.5,2245.19,2026-01-09T01:57:28.860376,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Cauliflower,Standard,FAQ,21/12/2025,1961.12,2316.91,2145.19,2026-01-09T01:57:28.865777,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Cauliflower,Standard,FAQ,21/12/2025,2078.64,2393.39,2285.19,2026-01-09T01:57:28.869313,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Cauliflower,Standard,FAQ,21/12/2025,1961.12,2316.91,2145.19,2026-01-09T01:57:28.873167,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Brinjal,Standard,FAQ,21/12/2025,2491.72,2712.64,2617.03,2026-01-09T01:57:28.876743,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.880884,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Brinjal,Standard,FAQ,21/12/2025,2301.3,2505.33,2417.03,2026-01-09T01:57:28.884279,agmarknet_data
+Bihar,Patna,Patna APMC,Brinjal,Standard,FAQ,21/12/2025,2301.3,2505.33,2417.03,2026-01-09T01:57:28.888333,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Brinjal,Standard,FAQ,21/12/2025,2420.31,2634.9,2542.03,2026-01-09T01:57:28.893597,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.897207,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Brinjal,Standard,FAQ,21/12/2025,2438.18,2880.52,2667.03,2026-01-09T01:57:28.901096,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Brinjal,Standard,FAQ,21/12/2025,2506.75,2961.52,2742.03,2026-01-09T01:57:28.904811,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Brinjal,Standard,FAQ,21/12/2025,2539.66,2924.23,2792.03,2026-01-09T01:57:28.909693,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Brinjal,Standard,FAQ,21/12/2025,2372.71,2583.07,2492.03,2026-01-09T01:57:28.920718,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Brinjal,Standard,FAQ,21/12/2025,2438.18,2880.52,2667.03,2026-01-09T01:57:28.925142,agmarknet_data
+Kerala,Kochi,Kochi APMC,Brinjal,Standard,FAQ,21/12/2025,2777.36,3023.6,2917.03,2026-01-09T01:57:28.929336,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Brinjal,Standard,FAQ,21/12/2025,2438.18,2880.52,2667.03,2026-01-09T01:57:28.932712,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Brinjal,Standard,FAQ,21/12/2025,2483.89,2934.52,2717.03,2026-01-09T01:57:28.936679,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.940788,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.947659,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.952961,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.958333,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Brinjal,Standard,FAQ,21/12/2025,2348.9,2557.16,2467.03,2026-01-09T01:57:28.964216,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Brinjal,Standard,FAQ,21/12/2025,2552.46,3015.53,2792.03,2026-01-09T01:57:28.968969,agmarknet_data
+Rajasthan,Kota,Kota APMC,Brinjal,Standard,FAQ,21/12/2025,2392.47,2826.52,2617.03,2026-01-09T01:57:28.973948,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.978442,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Brinjal,Standard,FAQ,21/12/2025,2552.46,3015.53,2792.03,2026-01-09T01:57:28.982299,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Brinjal,Standard,FAQ,21/12/2025,2539.33,2764.47,2667.03,2026-01-09T01:57:28.988447,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Brinjal,Standard,FAQ,21/12/2025,2425.96,2793.31,2667.03,2026-01-09T01:57:28.992591,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Brinjal,Standard,FAQ,21/12/2025,2323.91,2745.51,2542.03,2026-01-09T01:57:28.997307,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Brinjal,Standard,FAQ,21/12/2025,2471.44,2845.68,2717.03,2026-01-09T01:57:29.002212,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Brinjal,Standard,FAQ,21/12/2025,2323.91,2745.51,2542.03,2026-01-09T01:57:29.006350,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Carrot,Standard,FAQ,21/12/2025,2653.14,2888.37,2786.57,2026-01-09T01:57:29.011975,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.016043,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Carrot,Standard,FAQ,21/12/2025,2462.72,2681.07,2586.57,2026-01-09T01:57:29.019595,agmarknet_data
+Bihar,Patna,Patna APMC,Carrot,Standard,FAQ,21/12/2025,2462.72,2681.07,2586.57,2026-01-09T01:57:29.023187,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Carrot,Standard,FAQ,21/12/2025,2581.73,2810.63,2711.57,2026-01-09T01:57:29.026573,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.030290,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Carrot,Standard,FAQ,21/12/2025,2593.18,3063.63,2836.57,2026-01-09T01:57:29.034182,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Carrot,Standard,FAQ,21/12/2025,2661.74,3144.64,2911.57,2026-01-09T01:57:29.038796,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Carrot,Standard,FAQ,21/12/2025,2693.88,3101.8,2961.57,2026-01-09T01:57:29.043211,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Carrot,Standard,FAQ,21/12/2025,2534.13,2758.81,2661.57,2026-01-09T01:57:29.049214,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Carrot,Standard,FAQ,21/12/2025,2593.18,3063.63,2836.57,2026-01-09T01:57:29.058447,agmarknet_data
+Kerala,Kochi,Kochi APMC,Carrot,Standard,FAQ,21/12/2025,2938.78,3199.33,3086.57,2026-01-09T01:57:29.062658,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Carrot,Standard,FAQ,21/12/2025,2593.18,3063.63,2836.57,2026-01-09T01:57:29.066673,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Carrot,Standard,FAQ,21/12/2025,2638.89,3117.63,2886.57,2026-01-09T01:57:29.071751,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.075091,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.079560,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.083079,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.086793,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Carrot,Standard,FAQ,21/12/2025,2510.33,2732.89,2636.57,2026-01-09T01:57:29.090885,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Carrot,Standard,FAQ,21/12/2025,2707.45,3198.64,2961.57,2026-01-09T01:57:29.094988,agmarknet_data
+Rajasthan,Kota,Kota APMC,Carrot,Standard,FAQ,21/12/2025,2547.47,3009.63,2786.57,2026-01-09T01:57:29.100096,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.103512,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Carrot,Standard,FAQ,21/12/2025,2707.45,3198.64,2961.57,2026-01-09T01:57:29.108625,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Carrot,Standard,FAQ,21/12/2025,2700.75,2940.2,2836.57,2026-01-09T01:57:29.114244,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Carrot,Standard,FAQ,21/12/2025,2580.18,2970.88,2836.57,2026-01-09T01:57:29.118260,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Carrot,Standard,FAQ,21/12/2025,2478.9,2928.63,2711.57,2026-01-09T01:57:29.122382,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Carrot,Standard,FAQ,21/12/2025,2625.66,3023.25,2886.57,2026-01-09T01:57:29.129576,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Carrot,Standard,FAQ,21/12/2025,2478.9,2928.63,2711.57,2026-01-09T01:57:29.133760,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Banana,Standard,FAQ,21/12/2025,1600.5,1742.4,1680.99,2026-01-09T01:57:29.137872,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.143298,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Banana,Standard,FAQ,21/12/2025,1448.16,1576.56,1520.99,2026-01-09T01:57:29.147226,agmarknet_data
+Bihar,Patna,Patna APMC,Banana,Standard,FAQ,21/12/2025,1448.16,1576.56,1520.99,2026-01-09T01:57:29.150687,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Banana,Standard,FAQ,21/12/2025,1543.37,1680.21,1620.99,2026-01-09T01:57:29.153763,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.157245,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Banana,Standard,FAQ,21/12/2025,1573.32,1858.75,1720.99,2026-01-09T01:57:29.161101,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Banana,Standard,FAQ,21/12/2025,1628.17,1923.56,1780.99,2026-01-09T01:57:29.165515,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Banana,Standard,FAQ,21/12/2025,1656.4,1907.21,1820.99,2026-01-09T01:57:29.168997,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Banana,Standard,FAQ,21/12/2025,1505.29,1638.75,1580.99,2026-01-09T01:57:29.172179,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Banana,Standard,FAQ,21/12/2025,1573.32,1858.75,1720.99,2026-01-09T01:57:29.176103,agmarknet_data
+Kerala,Kochi,Kochi APMC,Banana,Standard,FAQ,21/12/2025,1829.01,1991.17,1920.99,2026-01-09T01:57:29.184417,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Banana,Standard,FAQ,21/12/2025,1573.32,1858.75,1720.99,2026-01-09T01:57:29.192099,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Banana,Standard,FAQ,21/12/2025,1609.89,1901.95,1760.99,2026-01-09T01:57:29.197624,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.201113,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.205914,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.214593,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.221515,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Banana,Standard,FAQ,21/12/2025,1486.25,1618.02,1560.99,2026-01-09T01:57:29.227501,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Banana,Standard,FAQ,21/12/2025,1664.74,1966.76,1820.99,2026-01-09T01:57:29.233234,agmarknet_data
+Rajasthan,Kota,Kota APMC,Banana,Standard,FAQ,21/12/2025,1536.75,1815.55,1680.99,2026-01-09T01:57:29.237171,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.243496,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Banana,Standard,FAQ,21/12/2025,1664.74,1966.76,1820.99,2026-01-09T01:57:29.247175,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Banana,Standard,FAQ,21/12/2025,1638.59,1783.86,1720.99,2026-01-09T01:57:29.250446,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Banana,Standard,FAQ,21/12/2025,1565.43,1802.48,1720.99,2026-01-09T01:57:29.254303,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Banana,Standard,FAQ,21/12/2025,1481.9,1750.75,1620.99,2026-01-09T01:57:29.257931,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Banana,Standard,FAQ,21/12/2025,1601.82,1844.37,1760.99,2026-01-09T01:57:29.261132,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Banana,Standard,FAQ,21/12/2025,1481.9,1750.75,1620.99,2026-01-09T01:57:29.265354,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Apple,Standard,FAQ,21/12/2025,7611.9,8286.78,7994.7,2026-01-09T01:57:29.269314,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.275524,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Apple,Standard,FAQ,21/12/2025,7002.55,7623.4,7354.7,2026-01-09T01:57:29.279196,agmarknet_data
+Bihar,Patna,Patna APMC,Apple,Standard,FAQ,21/12/2025,7002.55,7623.4,7354.7,2026-01-09T01:57:29.283959,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Apple,Standard,FAQ,21/12/2025,7383.39,8038.01,7754.7,2026-01-09T01:57:29.289488,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.303204,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Apple,Standard,FAQ,21/12/2025,7454.99,8807.47,8154.7,2026-01-09T01:57:29.306613,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Apple,Standard,FAQ,21/12/2025,7674.39,9066.69,8394.7,2026-01-09T01:57:29.311107,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Apple,Standard,FAQ,21/12/2025,7781.47,8959.77,8554.7,2026-01-09T01:57:29.315846,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Apple,Standard,FAQ,21/12/2025,7231.05,7872.17,7594.7,2026-01-09T01:57:29.320119,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Apple,Standard,FAQ,21/12/2025,7454.99,8807.47,8154.7,2026-01-09T01:57:29.325355,agmarknet_data
+Kerala,Kochi,Kochi APMC,Apple,Standard,FAQ,21/12/2025,8525.94,9281.86,8954.7,2026-01-09T01:57:29.334167,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Apple,Standard,FAQ,21/12/2025,7454.99,8807.47,8154.7,2026-01-09T01:57:29.341152,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Apple,Standard,FAQ,21/12/2025,7601.26,8980.28,8314.7,2026-01-09T01:57:29.350595,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.362399,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.369708,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.374057,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.379323,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Apple,Standard,FAQ,21/12/2025,7154.89,7789.25,7514.7,2026-01-09T01:57:29.383445,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Apple,Standard,FAQ,21/12/2025,7820.66,9239.49,8554.7,2026-01-09T01:57:29.387809,agmarknet_data
+Rajasthan,Kota,Kota APMC,Apple,Standard,FAQ,21/12/2025,7308.71,8634.67,7994.7,2026-01-09T01:57:29.391910,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.418946,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Apple,Standard,FAQ,21/12/2025,7820.66,9239.49,8554.7,2026-01-09T01:57:29.436678,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Apple,Standard,FAQ,21/12/2025,7764.24,8452.63,8154.7,2026-01-09T01:57:29.440780,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Apple,Standard,FAQ,21/12/2025,7417.62,8540.83,8154.7,2026-01-09T01:57:29.446118,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Apple,Standard,FAQ,21/12/2025,7089.31,8375.46,7754.7,2026-01-09T01:57:29.449387,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Apple,Standard,FAQ,21/12/2025,7563.16,8708.4,8314.7,2026-01-09T01:57:29.452516,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Apple,Standard,FAQ,21/12/2025,7089.31,8375.46,7754.7,2026-01-09T01:57:29.455802,agmarknet_data
+Andhra Pradesh,Vijayawada,Vijayawada APMC,Mango,Standard,FAQ,21/12/2025,3905.01,4251.23,4101.39,2026-01-09T01:57:29.458961,agmarknet_data
+Arunachal Pradesh,Arunachal Pradesh Main,Arunachal Pradesh Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.462032,agmarknet_data
+Assam,Guwahati,Guwahati APMC,Mango,Standard,FAQ,21/12/2025,3524.16,3836.62,3701.39,2026-01-09T01:57:29.465190,agmarknet_data
+Bihar,Patna,Patna APMC,Mango,Standard,FAQ,21/12/2025,3524.16,3836.62,3701.39,2026-01-09T01:57:29.468298,agmarknet_data
+Chhattisgarh,Raipur,Raipur APMC,Mango,Standard,FAQ,21/12/2025,3762.19,4095.75,3951.39,2026-01-09T01:57:29.472125,agmarknet_data
+Goa,Goa Main,Goa Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.476226,agmarknet_data
+Gujarat,Rajkot,Rajkot APMC,Mango,Standard,FAQ,21/12/2025,3840.89,4537.7,4201.39,2026-01-09T01:57:29.479510,agmarknet_data
+Haryana,Rohtak,Rohtak APMC,Mango,Standard,FAQ,21/12/2025,3978.02,4699.71,4351.39,2026-01-09T01:57:29.483365,agmarknet_data
+Himachal Pradesh,Himachal Pradesh Main,Himachal Pradesh Main APMC,Mango,Standard,FAQ,21/12/2025,4049.04,4662.16,4451.39,2026-01-09T01:57:29.486661,agmarknet_data
+Jharkhand,Ranchi,Ranchi APMC,Mango,Standard,FAQ,21/12/2025,3666.98,3992.1,3851.39,2026-01-09T01:57:29.490045,agmarknet_data
+Karnataka,Mysore,Mysore APMC,Mango,Standard,FAQ,21/12/2025,3840.89,4537.7,4201.39,2026-01-09T01:57:29.493706,agmarknet_data
+Kerala,Kochi,Kochi APMC,Mango,Standard,FAQ,21/12/2025,4476.28,4873.15,4701.39,2026-01-09T01:57:29.497185,agmarknet_data
+Madhya Pradesh,Jabalpur,Jabalpur APMC,Mango,Standard,FAQ,21/12/2025,3840.89,4537.7,4201.39,2026-01-09T01:57:29.500846,agmarknet_data
+Maharashtra,Nashik,Nashik APMC,Mango,Standard,FAQ,21/12/2025,3932.31,4645.71,4301.39,2026-01-09T01:57:29.504686,agmarknet_data
+Manipur,Manipur Main,Manipur Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.508647,agmarknet_data
+Meghalaya,Meghalaya Main,Meghalaya Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.512485,agmarknet_data
+Mizoram,Mizoram Main,Mizoram Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.515694,agmarknet_data
+Nagaland,Nagaland Main,Nagaland Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.519717,agmarknet_data
+Odisha,Bhubaneswar,Bhubaneswar APMC,Mango,Standard,FAQ,21/12/2025,3619.37,3940.27,3801.39,2026-01-09T01:57:29.523759,agmarknet_data
+Punjab,Jalandhar,Jalandhar APMC,Mango,Standard,FAQ,21/12/2025,4069.44,4807.72,4451.39,2026-01-09T01:57:29.529793,agmarknet_data
+Rajasthan,Kota,Kota APMC,Mango,Standard,FAQ,21/12/2025,3749.47,4429.7,4101.39,2026-01-09T01:57:29.538106,agmarknet_data
+Sikkim,Sikkim Main,Sikkim Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.547064,agmarknet_data
+Tamil Nadu,Madurai,Madurai APMC,Mango,Standard,FAQ,21/12/2025,4069.44,4807.72,4451.39,2026-01-09T01:57:29.555386,agmarknet_data
+Telangana,Hyderabad,Hyderabad APMC,Mango,Standard,FAQ,21/12/2025,4000.22,4354.88,4201.39,2026-01-09T01:57:29.559432,agmarknet_data
+Tripura,Tripura Main,Tripura Main APMC,Mango,Standard,FAQ,21/12/2025,3821.64,4400.32,4201.39,2026-01-09T01:57:29.562828,agmarknet_data
+Uttar Pradesh,Agra,Agra APMC,Mango,Standard,FAQ,21/12/2025,3612.34,4267.69,3951.39,2026-01-09T01:57:29.567022,agmarknet_data
+Uttarakhand,Uttarakhand Main,Uttarakhand Main APMC,Mango,Standard,FAQ,21/12/2025,3912.6,4505.06,4301.39,2026-01-09T01:57:29.570821,agmarknet_data
+West Bengal,Asansol,Asansol APMC,Mango,Standard,FAQ,21/12/2025,3612.34,4267.69,3951.39,2026-01-09T01:57:29.574859,agmarknet_data

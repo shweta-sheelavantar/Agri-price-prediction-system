@@ -29,15 +29,11 @@ const ProfileCompletionGuard: React.FC<ProfileCompletionGuardProps> = ({ childre
       return;
     }
 
-    // DISABLED: Profile completion redirect - allow access to dashboard without complete profile
-    // Uncomment below to re-enable profile completion requirement
-    /*
     // If user is authenticated but profile is incomplete, redirect to profile setup
     if (isAuthenticated && user && (!profile || !isProfileComplete(profile))) {
       console.log('⚠️ Profile incomplete, redirecting to profile setup');
       navigate('/profile-setup', { replace: true });
     }
-    */
   }, [user, profile, isAuthenticated, navigate, location.pathname]);
 
   const isProfileComplete = (profile: any) => {

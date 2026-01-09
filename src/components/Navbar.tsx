@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, User, LogOut } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';
@@ -8,10 +8,14 @@ import AuthModal from './AuthModal';
 const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
   const { user, profile, isAuthenticated, logout } = useAuth();
+  const location = useLocation();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
+
+  // Check if we're on the landing page
+  const isLandingPage = location.pathname === '/';
 
   const navLinks = [
     { label: 'About', href: '/about' },
@@ -85,8 +89,8 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Authentication Section */}
-            {isAuthenticated ? (
+            {/* Authentication Section - Hide user dropdown on landing page */}
+            {isAuthenticated && !isLandingPage ? (
               <div className="relative">
                 <button
                   onClick={() => setShowUserDropdown(!showUserDropdown)}
@@ -135,14 +139,14 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-            ) : (
+            ) : !isAuthenticated ? (
               <button
                 onClick={() => setShowAuthModal(true)}
                 className="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
               >
                 Login / Sign Up
               </button>
-            )}
+            ) : null}
           </div>
 
           {/* Mobile Menu Button */}
@@ -195,8 +199,8 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Mobile Authentication Section */}
-              {isAuthenticated ? (
+              {/* Mobile Authentication Section - Hide user menu on landing page */}
+              {isAuthenticated && !isLandingPage ? (
                 <div className="px-4 py-2 space-y-2">
                   <div className="flex items-center space-x-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
                     <User className="w-4 h-4 text-gray-600 dark:text-gray-300" />
@@ -236,7 +240,7 @@ const Navbar = () => {
                     <span>Logout</span>
                   </button>
                 </div>
-              ) : (
+              ) : !isAuthenticated ? (
                 <button
                   onClick={() => {
                     setShowAuthModal(true);
@@ -246,7 +250,7 @@ const Navbar = () => {
                 >
                   Login / Sign Up
                 </button>
-              )}
+              ) : null}
             </div>
           </div>
         )}

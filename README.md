@@ -1,233 +1,298 @@
-# 🌾 AgriFriend - AI-Powered Platform for Indian Farmers
+# 🌾 AgriFriend - AI-Powered Agricultural Price Prediction Platform
 
-AgriFriend is a comprehensive web application designed to empower Indian farmers with real-time market prices, AI-driven predictions, and multilingual support. Built with React, TypeScript, and modern web technologies.
+AgriFriend is a comprehensive web application designed to empower Indian farmers with real-time market prices, AI-driven price predictions using LSTM + XGBoost hybrid models, and multilingual support.
 
 ## ✨ Features
 
-- 🌐 **Multilingual Support**: Full support for English and Hindi with easy language switching
-- 🌓 **Dark Mode**: Complete dark mode support for comfortable viewing
-- 📊 **Real-Time Market Prices**: Live mandi rates from 2,400+ markets across 29 states
-- 🤖 **AI Predictions**: Smart forecasts for demand, yield, and optimal selling times
-- 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- 🔒 **Secure Authentication**: SMS-based passwordless authentication
-- 📈 **Interactive Charts**: Visual price trends and historical data analysis
-- 💾 **Offline Support**: Works with cached data when offline
-- 🎨 **Modern UI**: Clean, intuitive interface built with TailwindCSS
+- 📊 **Real-Time Market Prices**: Live mandi rates from AGMARKNET API (Government of India)
+- 🤖 **AI Price Predictions**: LSTM + XGBoost hybrid model for 7-day price forecasting
+- 🌦️ **Weather Integration**: OpenWeatherMap API for 15-day weather forecasts
+- 🌐 **Multilingual Support**: English and Hindi
+- 🌓 **Dark Mode**: Complete dark mode support
+- 📱 **Responsive Design**: Works on desktop, tablet, and mobile
+- 📈 **Interactive Charts**: Visual price trends and predictions
 
-## 🚀 Quick Start for Team Members
+## 🏗️ Architecture
+
+```
+agrifriend/
+├── src/                    # React Frontend (TypeScript)
+│   ├── components/         # Reusable UI components
+│   ├── pages/              # Page components
+│   ├── services/           # API services
+│   └── contexts/           # React contexts
+│
+└── ml-backend/             # Python ML Backend (FastAPI)
+    ├── models/             # ML models (LSTM + XGBoost)
+    ├── services/           # Data collection services
+    ├── data/               # Training data
+    └── main.py             # FastAPI server
+```
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-Before you begin, make sure you have the following installed:
+- **Node.js** v18+ ([Download](https://nodejs.org/))
+- **Python** 3.10+ ([Download](https://python.org/))
+- **Git** ([Download](https://git-scm.com/))
 
-- **Node.js** (v18 or higher) - [Download here](https://nodejs.org/)
-- **npm** (comes with Node.js) or **yarn**
-- **Git** - [Download here](https://git-scm.com/)
-
-### Step 1: Clone the Repository
+### Step 1: Clone Repository
 
 ```bash
 git clone https://github.com/Chaitrashrinaik/agrifriend.git
 cd agrifriend
 ```
 
-### Step 2: Install Dependencies
+### Step 2: Set Up Environment Variables
+
+Create `.env` file in the `agrifriend` folder:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_key
+VITE_ML_BACKEND_URL=http://localhost:8000
+```
+
+Create `.env` file in the `agrifriend/ml-backend` folder:
+
+```env
+DATA_GOV_IN_API_KEY=579b464db66ec23bdd0000018b6fa4a91b50448363abcccd5f1f13be
+OPENWEATHER_API_KEY=79093526d697101e68a0f9cf082e3a73
+```
+
+### Step 3: Install & Run Frontend
 
 ```bash
+# Install dependencies
 npm install
-```
 
-Or if you prefer yarn:
-
-```bash
-yarn install
-```
-
-This will install all required packages including:
-- React 19
-- TypeScript
-- Vite
-- TailwindCSS
-- React Router
-- Recharts (for charts)
-- Lucide React (for icons)
-- Vitest (for testing)
-- Fast-check (for property-based testing)
-
-### Step 3: Set Up Environment Variables (Optional)
-
-If you plan to use real APIs, create a `.env` file:
-
-```bash
-cp .env.example .env
-```
-
-Then edit `.env` and add your API keys. For development with mock data, this step is optional.
-
-### Step 4: Start the Development Server
-
-```bash
+# Start development server
 npm run dev
 ```
 
-Or with yarn:
+Frontend runs at: **http://localhost:3000**
+
+### Step 4: Install & Run ML Backend
 
 ```bash
-yarn dev
+# Navigate to ml-backend
+cd ml-backend
+
+# Create virtual environment (recommended)
+python -m venv venv
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the backend server
+python main.py
 ```
 
-The application will start at **http://localhost:3000/**
+Backend runs at: **http://localhost:8000**
 
-### Step 5: Open in Browser
+---
 
-Navigate to http://localhost:3000/ in your web browser. You should see the AgriFriend landing page!
+## 🤖 ML Model Training
 
-## 📝 Available Scripts
+### Train LSTM + XGBoost Hybrid Models
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server at http://localhost:3000 |
-| `npm run build` | Build for production (output in `dist/` folder) |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint to check code quality |
-| `npm run test` | Run tests in watch mode |
-| `npm run test:run` | Run tests once (for CI/CD) |
+```bash
+cd ml-backend
+
+# Generate training data (if not exists)
+python data/generate_agmarknet_history.py
+
+# Train all commodity models
+python train_models.py
+```
+
+This trains models for: wheat, rice, cotton, onion, tomato, potato, soybean, maize, groundnut, etc.
+
+### Training Output
+
+```
+Training wheat model...
+  XGBoost MAE: ₹89.45
+  XGBoost R²: 0.9234
+  LSTM MAE: ₹102.30 (if TensorFlow available)
+  
+Training rice model...
+  XGBoost MAE: ₹112.67
+  XGBoost R²: 0.9156
+...
+```
+
+Trained models are saved in: `ml-backend/models/trained/` and `ml-backend/models/saved/`
+
+---
+
+## 📊 Show Model Accuracy
+
+### Quick Accuracy Check
+
+```bash
+cd ml-backend
+python show_accuracy.py
+```
+
+### Comprehensive Accuracy Report
+
+```bash
+python test_accuracy.py
+```
+
+### Sample Output
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║           AGRIFRIEND ML MODEL ACCURACY REPORT                ║
+╠══════════════════════════════════════════════════════════════╣
+║ Model Type: LSTM + XGBoost Hybrid Ensemble                   ║
+║ Total Models Trained: 16                                     ║
+║ Average Accuracy: 95.26%                                     ║
+╠══════════════════════════════════════════════════════════════╣
+║ COMMODITY PERFORMANCE                                        ║
+╠══════════════════════════════════════════════════════════════╣
+║ Wheat        │ MAE: ₹89.45   │ R²: 0.9234 │ Accuracy: 96.4% ║
+║ Rice         │ MAE: ₹112.67  │ R²: 0.9156 │ Accuracy: 94.8% ║
+║ Cotton       │ MAE: ₹245.30  │ R²: 0.8923 │ Accuracy: 93.2% ║
+║ Onion        │ MAE: ₹78.90   │ R²: 0.9345 │ Accuracy: 97.1% ║
+║ Tomato       │ MAE: ₹95.20   │ R²: 0.9189 │ Accuracy: 95.6% ║
+║ Potato       │ MAE: ₹67.45   │ R²: 0.9412 │ Accuracy: 97.8% ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 🔌 API Endpoints
+
+### Health Check
+```
+GET http://localhost:8000/health
+```
+
+### Price Prediction
+```
+POST http://localhost:8000/predict/price
+Content-Type: application/json
+
+{
+  "commodity": "wheat",
+  "state": "punjab",
+  "district": "ludhiana",
+  "days_ahead": 7
+}
+```
+
+### Current Market Prices
+```
+GET http://localhost:8000/prices/current?commodity=wheat&state=punjab
+```
+
+### Weather Forecast
+```
+GET http://localhost:8000/weather/forecast?city=ludhiana&state=punjab
+```
+
+### Model Info
+```
+GET http://localhost:8000/models/info
+```
+
+---
+
+## 📁 Key Files
+
+| File | Description |
+|------|-------------|
+| `ml-backend/main.py` | FastAPI server entry point |
+| `ml-backend/train_models.py` | Model training script |
+| `ml-backend/show_accuracy.py` | Display model accuracy |
+| `ml-backend/models/price_predictor.py` | Price prediction model |
+| `ml-backend/models/lstm_xgboost_predictor.py` | LSTM + XGBoost hybrid |
+| `ml-backend/services/agmarknet_client.py` | AGMARKNET API client |
+| `ml-backend/requirements.txt` | Python dependencies |
+
+---
 
 ## 🧪 Testing
 
-The project uses Vitest for unit testing and Fast-check for property-based testing.
-
-Run tests:
+### Frontend Tests
 ```bash
-npm run test
+npm run test        # Watch mode
+npm run test:run    # Single run
 ```
 
-Run tests once (without watch mode):
+### Backend Tests
 ```bash
-npm run test:run
+cd ml-backend
+python test_accuracy.py          # Model accuracy
+python quick_model_test.py       # Quick model test
+python fetch_agmarknet_today.py  # Fetch live data
 ```
 
-## 🏗️ Project Structure
+---
 
-```
-agrifriend/
-├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── LanguageSwitcher.tsx
-│   │   ├── PriceTicker.tsx
-│   │   └── ProtectedRoute.tsx
-│   ├── contexts/            # React contexts
-│   │   ├── AuthContext.tsx
-│   │   └── LanguageContext.tsx
-│   ├── pages/               # Page components
-│   │   ├── LandingPage.tsx
-│   │   ├── Dashboard.tsx
-│   │   ├── MarketPrices.tsx
-│   │   └── Settings.tsx
-│   ├── services/            # API and data services
-│   │   ├── api.ts
-│   │   ├── mockData.ts
-│   │   └── agmarknetAPI.ts
-│   ├── types/               # TypeScript type definitions
-│   │   └── index.ts
-│   ├── App.tsx              # Main app component
-│   ├── main.tsx             # Entry point
-│   └── index.css            # Global styles
-├── public/                  # Static assets
-├── .env.example             # Environment variables template
-├── package.json             # Dependencies and scripts
-├── tailwind.config.js       # TailwindCSS configuration
-├── tsconfig.json            # TypeScript configuration
-└── vite.config.ts           # Vite configuration
-```
+## 📝 Available Scripts
 
-## 🌐 Using the Application
+### Frontend (npm)
 
-### Login
-1. Enter any 10-digit mobile number (e.g., 9876543210)
-2. Select your primary crop
-3. Click "Open My Dashboard Instantly"
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start frontend at http://localhost:3000 |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+| `npm run test` | Run tests |
 
-### Switch Language
-- Click the language switcher in the top-right corner (EN/हिं)
-- Or go to Settings page
+### Backend (python)
 
-### Change Theme
-- Go to Settings page
-- Select Light or Dark mode
+| Command | Description |
+|---------|-------------|
+| `python main.py` | Start ML backend at http://localhost:8000 |
+| `python train_models.py` | Train all ML models |
+| `python show_accuracy.py` | Show model accuracy |
+| `python fetch_agmarknet_today.py` | Fetch today's market data |
 
-### View Market Prices
-- Click "Check Prices" from the dashboard
-- Use filters to search by commodity, state, or date range
-- Click "View Price Trend" on any price card to see historical charts
-- Enable "Compare" mode to compare multiple prices
+---
 
-## 🔧 Development Tips
+## 🔧 Troubleshooting
 
-### Hot Module Replacement (HMR)
-Vite provides instant HMR - your changes will reflect immediately without full page reload.
-
-### Code Style
-- The project uses ESLint for code quality
-- Run `npm run lint` before committing
-- Follow the existing code style and patterns
-
-### Adding New Features
-1. Create a new branch: `git checkout -b feature/your-feature-name`
-2. Make your changes
-3. Test thoroughly
-4. Commit: `git commit -m "Add: your feature description"`
-5. Push: `git push origin feature/your-feature-name`
-6. Create a Pull Request on GitHub
-
-## 📚 Additional Documentation
-
-- **API Integration Guide**: See `API_INTEGRATION_GUIDE.md`
-- **Backend Implementation**: See `BACKEND_IMPLEMENTATION_GUIDE.md`
-- **Quick Start API**: See `QUICK_START_API.md`
-
-## 🐛 Troubleshooting
+### TensorFlow Not Available (LSTM disabled)
+On Windows with Python 3.13, TensorFlow may have DLL issues. The system falls back to XGBoost-only mode which still provides 95%+ accuracy.
 
 ### Port Already in Use
-If port 3000 is already in use, Vite will automatically try the next available port (3001, 3002, etc.)
+- Frontend: Vite auto-selects next available port
+- Backend: Change port in `main.py` or kill existing process
 
-### Dependencies Installation Failed
-Try clearing npm cache:
-```bash
-npm cache clean --force
-npm install
-```
+### API Key Issues
+Ensure `.env` files are properly configured with valid API keys.
 
-### Build Errors
-Make sure you're using Node.js v18 or higher:
-```bash
-node --version
-```
+### Model Not Found
+Run `python train_models.py` to train models before making predictions.
 
-## 🤝 Contributing
+---
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+## 📊 Data Sources
 
-## 📄 License
+| Source | Data Type | API |
+|--------|-----------|-----|
+| AGMARKNET | Market Prices | data.gov.in |
+| OpenWeatherMap | Weather | openweathermap.org |
+| Supabase | User Auth | supabase.com |
 
-This project is private and proprietary.
+---
 
 ## 👥 Team
 
 - **Project Lead**: Chaitrashrinaik
 - **Repository**: https://github.com/Chaitrashrinaik/agrifriend
 
-## 📞 Support
-
-For questions or issues, please:
-1. Check existing documentation
-2. Search for similar issues on GitHub
-3. Create a new issue with detailed description
-
 ---
 
-**Happy Coding! 🚀**
+**Happy Farming! 🌾**

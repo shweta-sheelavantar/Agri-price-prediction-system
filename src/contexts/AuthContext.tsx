@@ -10,7 +10,7 @@ interface AuthContextType {
   signUp: (email: string, password: string, phone: string, fullName: string) => Promise<{ user: User; session: Session; } | null>;
   signIn: (email: string, password: string) => Promise<void>;
   signInWithPhone: (phone: string) => Promise<void>;
-  verifyOtp: (phone: string, token: string) => Promise<void>;
+  verifyOtp: (phone: string, token: string) => Promise<{ user: User; session: Session; } | null>;
   logout: () => Promise<void>;
   updateProfile: (updates: Partial<UserProfile>) => Promise<void>;
   isLoading: boolean;
@@ -121,15 +121,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setIsLoading(true);
     try {
       const result = await authService.signUp(email, password, phone, fullName);
-      
-      // If user is immediately available (no email confirmation), update state
-      if (result?.user && result?.session) {
-        console.log('🔄 Immediate signup success, updating auth state');
-        setUser(result.user);
-        setSession(result.session);
-        // Profile will be loaded by the auth state change listener
-      }
-      
+      console.log('✅ Signup successful');
       return result;
     } finally {
       setIsLoading(false);
@@ -139,7 +131,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const signIn = async (email: string, password: string) => {
     setIsLoading(true);
     try {
-      await authService.signIn(email, password);
+      const result = await authService.signIn(email, password);
+      console.log('✅ Sign-in successful');
+      // Auth state change listener will handle the rest
     } finally {
       setIsLoading(false);
     }
@@ -157,7 +151,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const verifyOtp = async (phone: string, token: string) => {
     setIsLoading(true);
     try {
-      await authService.verifyOtp(phone, token);
+      const result = await authService.verifyOtp(phone, token);
+      console.log('✅ OTP verification successful');
+      return result;
     } finally {
       setIsLoading(false);
     }

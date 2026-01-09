@@ -1,23 +1,13 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Globe, Sun, Moon } from 'lucide-react';
+import { Globe, Sun, Moon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import PageNavigation from '../components/PageNavigation';
 
 const Settings = () => {
   const { language, setLanguage, theme, setTheme, t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pb-20">
-      {/* Header */}
-      <div className="bg-white dark:bg-gray-800 shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center space-x-4">
-            <Link to="/dashboard" className="text-gray-600 dark:text-gray-300 hover:text-primary-600">
-              <ArrowLeft className="w-6 h-6" />
-            </Link>
-            <h1 className="text-2xl font-bold text-gray-800 dark:text-white">{t('settings.title')}</h1>
-          </div>
-        </div>
-      </div>
+      <PageNavigation title={t('settings.title')} />
 
       <div className="container mx-auto px-4 py-6 max-w-2xl">
         {/* Language Settings */}

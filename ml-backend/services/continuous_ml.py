@@ -81,7 +81,7 @@ class ContinuousMLService:
                 for target in prediction_targets:
                     try:
                         # Generate new prediction
-                        prediction = await self.price_predictor.predict_price(
+                        prediction = await self.price_predictor.predict(
                             commodity=target['commodity'],
                             state=target['state'],
                             district=target['district'],
@@ -125,7 +125,7 @@ class ContinuousMLService:
                 for farm in farms:
                     try:
                         # Generate yield prediction
-                        prediction = await self.yield_predictor.predict_yield(
+                        prediction = await self.yield_predictor.predict(
                             crop_type=farm['crop_type'],
                             variety=farm['variety'],
                             state=farm['state'],
@@ -173,7 +173,7 @@ class ContinuousMLService:
                 for farm in farms:
                     try:
                         # Generate risk assessment
-                        assessment = await self.risk_assessor.assess_risk(
+                        assessment = await self.risk_assessor.assess(
                             crop_type=farm['crop_type'],
                             state=farm['state'],
                             district=farm['district'],
@@ -255,8 +255,8 @@ class ContinuousMLService:
                 for location in major_cities:
                     try:
                         # Get current weather
-                        weather_data = await self.data_collector.get_weather_data(
-                            location['city'], location['state']
+                        weather_data = await self.data_collector.collect_weather_data(
+                            location['state'], location['city']
                         )
                         
                         weather_key = f"{location['city']}_{location['state']}"
@@ -290,7 +290,7 @@ class ContinuousMLService:
     async def trigger_immediate_price_update(self, commodity: str, state: str):
         """Trigger immediate price prediction update"""
         try:
-            prediction = await self.price_predictor.predict_price(
+            prediction = await self.price_predictor.predict(
                 commodity=commodity,
                 state=state,
                 district="all",
@@ -322,7 +322,7 @@ class ContinuousMLService:
             farms = await self.get_farms_in_state(state)
             
             for farm in farms:
-                assessment = await self.risk_assessor.assess_risk(
+                assessment = await self.risk_assessor.assess(
                     crop_type=farm['crop_type'],
                     state=farm['state'],
                     district=farm['district'],
@@ -388,19 +388,14 @@ class ContinuousMLService:
         """Store prediction in database"""
         try:
             prediction_data = {
-                'id': prediction.prediction_id,
-                'user_id': prediction.user_id,
-                'type': prediction.prediction_type,
                 'commodity': prediction.commodity,
                 'state': prediction.state,
                 'district': prediction.district,
-                'data': json.dumps(prediction.prediction_data),
-                'confidence': prediction.confidence,
-                'created_at': prediction.created_at.isoformat(),
-                'expires_at': prediction.expires_at.isoformat()
+                'predicted_value': prediction.prediction_data.get('current_price', 0),
+                'target_date': prediction.expires_at.strftime("%Y-%m-%d")
             }
             
-            self.db_manager.insert_prediction(prediction_data)
+            self.db_manager.store_model_prediction(prediction.prediction_type, prediction_data)
             
         except Exception as e:
             logger.error(f"Error storing prediction in database: {e}")
@@ -429,7 +424,11 @@ class ContinuousMLService:
             for user_id, callbacks in self.prediction_subscribers.items():
                 for callback in callbacks:
                     try:
-                        await callback(update_data)
+                        # Handle both sync and async callbacks
+                        if asyncio.iscoroutinefunction(callback):
+                            await callback(update_data)
+                        else:
+                            callback(update_data)
                     except Exception as e:
                         logger.error(f"Error broadcasting prediction to user {user_id}: {e}")
         else:
@@ -437,7 +436,11 @@ class ContinuousMLService:
             if prediction.user_id in self.prediction_subscribers:
                 for callback in self.prediction_subscribers[prediction.user_id]:
                     try:
-                        await callback(update_data)
+                        # Handle both sync and async callbacks
+                        if asyncio.iscoroutinefunction(callback):
+                            await callback(update_data)
+                        else:
+                            callback(update_data)
                     except Exception as e:
                         logger.error(f"Error sending prediction to user {prediction.user_id}: {e}")
     

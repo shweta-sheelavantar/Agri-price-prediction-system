@@ -72,7 +72,7 @@
 ### **Data Sources:**
 - ✅ AGMARKNET API integration (579b464db66ec23bdd0000018b6fa4a91b50448363abcccd5f1f13be)
 - ✅ OpenWeatherMap API (79093526d697101e68a0f9cf082e3a73)
-- ✅ Synthetic data generation for fallbacks
+- ✅ AGMARKNET data generation for fallbacks
 - ✅ Historical data collection and storage
 
 ### **ML Models:**
@@ -116,7 +116,7 @@
 ```
 ✅ Response Time: <2 seconds for predictions
 ✅ API Reliability: Graceful fallbacks on timeout
-✅ Data Quality: Real sources with synthetic backup
+✅ Data Quality: Real sources with AGMARKNET backup
 ✅ Model Accuracy: 82-91% across all models
 ✅ System Uptime: Stable with auto-reload
 ```

@@ -387,7 +387,11 @@ class RealTimeDashboardService:
         if user_id in self.dashboard_subscribers:
             for callback in self.dashboard_subscribers[user_id]:
                 try:
-                    await callback(update_data)
+                    # Handle both sync and async callbacks
+                    if asyncio.iscoroutinefunction(callback):
+                        await callback(update_data)
+                    else:
+                        callback(update_data)
                 except Exception as e:
                     logger.error(f"Error notifying dashboard subscriber for user {user_id}: {e}")
     
@@ -396,7 +400,11 @@ class RealTimeDashboardService:
         for user_id, callbacks in self.dashboard_subscribers.items():
             for callback in callbacks:
                 try:
-                    await callback(update_data)
+                    # Handle both sync and async callbacks
+                    if asyncio.iscoroutinefunction(callback):
+                        await callback(update_data)
+                    else:
+                        callback(update_data)
                 except Exception as e:
                     logger.error(f"Error broadcasting market update to user {user_id}: {e}")
     
@@ -405,7 +413,11 @@ class RealTimeDashboardService:
         for user_id, callbacks in self.dashboard_subscribers.items():
             for callback in callbacks:
                 try:
-                    await callback(update_data)
+                    # Handle both sync and async callbacks
+                    if asyncio.iscoroutinefunction(callback):
+                        await callback(update_data)
+                    else:
+                        callback(update_data)
                 except Exception as e:
                     logger.error(f"Error broadcasting performance update to user {user_id}: {e}")
     

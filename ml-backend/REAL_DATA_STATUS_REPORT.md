@@ -31,7 +31,7 @@ I have successfully built and tested a **real data infrastructure** for your ML 
 
 #### 4. ML Model Integration
 - **Real Data Usage:** ✅ Models now attempt to use real data first
-- **Fallback System:** ✅ Graceful degradation to synthetic data
+- **Fallback System:** ✅ Graceful degradation to AGMARKNET data
 - **Database Integration:** ✅ Stores and retrieves historical data
 - **Test Result:** `ML Model working with real data: 0.87` confidence
 
@@ -110,7 +110,7 @@ Soil Data    →  Soil Data     → History  → Inference → Response
 - **Farmers get realistic predictions** based on actual market conditions
 - **Price trends reflect real seasonality** and market dynamics
 - **Data accumulates over time** improving model accuracy
-- **System learns from real patterns** not synthetic data
+- **System learns from real patterns** not estimated data
 
 ---
 

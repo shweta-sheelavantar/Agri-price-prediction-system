@@ -1,305 +1,197 @@
-# AgriFriend ML Backend
+# 🤖 AgriFriend ML Backend
 
-AI/ML Backend for Agricultural Predictions - Price Forecasting, Yield Estimation, and Risk Assessment
-
-## 🎯 Features
-
-- **Price Prediction**: 7-day commodity price forecasting with 87% accuracy
-- **Yield Estimation**: Crop yield prediction with 82% accuracy
-- **Risk Assessment**: Agricultural risk analysis with 91% accuracy
-- **Model Monitoring**: Real-time accuracy tracking and drift detection
-- **RESTful API**: FastAPI-based endpoints for easy integration
-
-## 📊 Model Accuracy
-
-| Model | Algorithm | Accuracy | MAE/RMSE |
-|-------|-----------|----------|----------|
-| Price Predictor | LSTM + XGBoost | 87% | MAE: ₹45.2, RMSE: ₹62.8 |
-| Yield Predictor | Random Forest + NN | 82% | MAE: 0.45 tons/ha, R²: 0.78 |
-| Risk Assessor | Gradient Boosting | 91% | Precision: 0.89, Recall: 0.87 |
+FastAPI-based ML backend for agricultural price prediction using LSTM + XGBoost hybrid models.
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.9+
-- Docker (optional)
-- Redis (optional, for caching)
+### 1. Install Dependencies
 
-### Installation
-
-1. **Clone the repository**
 ```bash
-cd agrifriend/ml-backend
-```
-
-2. **Create virtual environment**
-```bash
+# Create virtual environment (recommended)
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
 
-3. **Install dependencies**
-```bash
+# Install packages
 pip install -r requirements.txt
 ```
 
-4. **Run the server**
+### 2. Configure Environment
+
+Create `.env` file:
+
+```env
+DATA_GOV_IN_API_KEY=579b464db66ec23bdd0000018b6fa4a91b50448363abcccd5f1f13be
+OPENWEATHER_API_KEY=79093526d697101e68a0f9cf082e3a73
+```
+
+### 3. Run the Server
+
 ```bash
 python main.py
 ```
 
-The API will be available at http://localhost:8000
+Server runs at: **http://localhost:8000**
 
-### Using Docker
+API Docs: **http://localhost:8000/docs**
+
+---
+
+## 📊 Model Training
+
+### Train All Models
 
 ```bash
-# Build and run
-docker-compose up -d
-
-# View logs
-docker-compose logs -f ml-api
-
-# Stop
-docker-compose down
+python train_models.py
 ```
 
-## 📖 API Documentation
+This trains LSTM + XGBoost hybrid models for 16+ commodities:
+- Wheat, Rice, Cotton, Onion, Tomato, Potato
+- Soybean, Maize, Groundnut, Lentil, Mustard
+- Bengal Gram, Green Gram, Chilli, Garlic, Cabbage
 
-Once the server is running, visit:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+### Show Model Accuracy
 
-### Example Requests
-
-#### 1. Price Prediction
 ```bash
-curl -X POST "http://localhost:8000/predict/price" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "commodity": "Wheat",
-    "state": "Punjab",
-    "district": "Ludhiana",
-    "days_ahead": 7
-  }'
+python show_accuracy.py
 ```
 
-Response:
-```json
+Output:
+```
+╔══════════════════════════════════════════════════════════════╗
+║           AGRIFRIEND ML MODEL ACCURACY REPORT                ║
+╠══════════════════════════════════════════════════════════════╣
+║ Average Accuracy: 95.26%                                     ║
+║ Total Models: 16                                             ║
+╠══════════════════════════════════════════════════════════════╣
+║ Wheat    │ MAE: ₹88.45  │ Accuracy: 96.34%                  ║
+║ Rice     │ MAE: ₹67.62  │ Accuracy: 98.12%                  ║
+║ Cotton   │ MAE: ₹57.97  │ Accuracy: 99.24%                  ║
+║ Onion    │ MAE: ₹81.34  │ Accuracy: 96.89%                  ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 🔌 API Endpoints
+
+### Health Check
+```
+GET /health
+```
+
+### Price Prediction
+```
+POST /predict/price
 {
-  "success": true,
-  "prediction": {
-    "commodity": "Wheat",
-    "current_price": 2500,
-    "predictions": [
-      {
-        "date": "2024-12-11",
-        "predicted_price": 2520,
-        "confidence_lower": 2475,
-        "confidence_upper": 2565,
-        "change_percent": 0.8
-      }
-    ],
-    "trend": "increasing",
-    "confidence": 0.87
-  },
-  "model_accuracy": 0.87
+  "commodity": "wheat",
+  "state": "punjab",
+  "district": "ludhiana",
+  "days_ahead": 7
 }
 ```
 
-#### 2. Yield Prediction
-```bash
-curl -X POST "http://localhost:8000/predict/yield" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "crop_type": "Wheat",
-    "variety": "HD-2967",
-    "state": "Punjab",
-    "district": "Ludhiana",
-    "soil_type": "loam",
-    "irrigation_type": "drip",
-    "planting_date": "2024-11-01",
-    "area_hectares": 5.0
-  }'
+### Current Prices
+```
+GET /prices/current?commodity=wheat&state=punjab
 ```
 
-#### 3. Risk Assessment
-```bash
-curl -X POST "http://localhost:8000/assess/risk" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "crop_type": "Wheat",
-    "state": "Punjab",
-    "district": "Ludhiana",
-    "current_stage": "vegetative"
-  }'
+### Weather Forecast
+```
+GET /weather/forecast?city=ludhiana&state=punjab
 ```
 
-#### 4. Get Model Accuracy
-```bash
-curl "http://localhost:8000/models/accuracy"
+### Model Info
+```
+GET /models/info
 ```
 
-## 🔧 Configuration
+---
 
-### Environment Variables
+## 📁 Project Structure
 
-Create a `.env` file:
-
-```env
-# API Configuration
-API_HOST=0.0.0.0
-API_PORT=8000
-LOG_LEVEL=info
-
-# Database (optional)
-DATABASE_URL=postgresql://user:pass@localhost:5432/agrifriend
-
-# Redis (optional)
-REDIS_URL=redis://localhost:6379
-
-# External APIs (optional)
-WEATHER_API_KEY=your_key
-SOIL_API_KEY=your_key
+```
+ml-backend/
+├── main.py                 # FastAPI server
+├── train_models.py         # Model training script
+├── show_accuracy.py        # Display accuracy report
+├── requirements.txt        # Python dependencies
+├── .env                    # Environment variables
+│
+├── models/
+│   ├── price_predictor.py          # Main prediction model
+│   ├── lstm_xgboost_predictor.py   # LSTM + XGBoost hybrid
+│   ├── yield_predictor.py          # Yield prediction
+│   ├── risk_assessor.py            # Risk assessment
+│   ├── trained/                    # Trained model files
+│   └── saved/                      # Saved model checkpoints
+│
+├── services/
+│   ├── agmarknet_client.py         # AGMARKNET API client
+│   ├── data_collector.py           # Data collection
+│   ├── weather_service.py          # Weather API
+│   ├── continuous_ml.py            # Continuous predictions
+│   └── realtime_notifications.py   # Real-time alerts
+│
+├── data/
+│   ├── collected/                  # Collected market data
+│   └── training_data.csv           # Training dataset
+│
+└── utils/
+    └── database.py                 # Database utilities
 ```
 
-## 📈 Model Monitoring
-
-### View Model Performance
-```bash
-curl "http://localhost:8000/models/accuracy"
-```
-
-### Retrain Models
-```bash
-curl -X POST "http://localhost:8000/models/retrain"
-```
-
-### Export Metrics
-The monitoring service automatically tracks:
-- Prediction count
-- Accuracy trends
-- Model drift detection
-- Performance alerts
+---
 
 ## 🧪 Testing
 
 ```bash
-# Run tests
-pytest
+# Quick model test
+python quick_model_test.py
 
-# Run with coverage
-pytest --cov=. --cov-report=html
+# Comprehensive accuracy test
+python test_accuracy.py
+
+# Fetch today's market data
+python fetch_agmarknet_today.py
+
+# Test weather API
+python test_weather_api.py
 ```
-
-## 📊 Model Details
-
-### Price Prediction Model
-- **Input Features**: Historical prices, weather data, seasonality, market demand
-- **Architecture**: LSTM (64 units) + XGBoost (100 estimators)
-- **Training Data**: 5 years of AGMARKNET data
-- **Update Frequency**: Weekly
-- **Prediction Horizon**: 7 days
-
-### Yield Prediction Model
-- **Input Features**: Soil data, weather forecast, crop variety, farming practices
-- **Architecture**: Random Forest (200 trees) + Neural Network (3 layers)
-- **Training Data**: 10 years of crop yield data
-- **Update Frequency**: Seasonal
-- **Accuracy**: 82% (R² = 0.78)
-
-### Risk Assessment Model
-- **Input Features**: Weather patterns, pest data, market volatility, financial indicators
-- **Architecture**: Gradient Boosting Classifier
-- **Training Data**: Historical risk events and outcomes
-- **Update Frequency**: Monthly
-- **Categories**: Weather, Pest, Market, Financial
-
-## 🔄 Model Retraining
-
-Models are automatically retrained:
-- **Price Model**: Weekly (every Sunday)
-- **Yield Model**: Seasonally (before planting season)
-- **Risk Model**: Monthly
-
-Manual retraining:
-```python
-# In Python
-import requests
-response = requests.post("http://localhost:8000/models/retrain")
-```
-
-## 📦 Project Structure
-
-```
-ml-backend/
-├── main.py                 # FastAPI application
-├── models/
-│   ├── price_predictor.py  # Price prediction model
-│   ├── yield_predictor.py  # Yield estimation model
-│   └── risk_assessor.py    # Risk assessment model
-├── services/
-│   ├── model_monitor.py    # Model monitoring service
-│   ├── data_collector.py   # Data collection service
-│   └── database.py         # Database manager
-├── utils/
-│   ├── logger.py           # Logging utilities
-│   └── validators.py       # Input validators
-├── requirements.txt        # Python dependencies
-├── Dockerfile             # Docker configuration
-├── docker-compose.yml     # Docker Compose setup
-└── README.md              # This file
-```
-
-## 🚀 Deployment
-
-### Production Deployment
-
-1. **Build Docker image**
-```bash
-docker build -t agrifriend-ml:latest .
-```
-
-2. **Push to registry**
-```bash
-docker tag agrifriend-ml:latest your-registry/agrifriend-ml:latest
-docker push your-registry/agrifriend-ml:latest
-```
-
-3. **Deploy to Kubernetes**
-```bash
-kubectl apply -f k8s/deployment.yaml
-```
-
-### Performance Optimization
-
-- Use Redis for caching predictions
-- Enable model quantization for faster inference
-- Use GPU for training (CUDA support)
-- Implement batch prediction endpoints
-
-## 📝 API Rate Limits
-
-- **Free Tier**: 100 requests/hour
-- **Pro Tier**: 1000 requests/hour
-- **Enterprise**: Unlimited
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Add tests for new features
-4. Submit pull request
-
-## 📄 License
-
-Proprietary - AgriFriend Platform
-
-## 📞 Support
-
-For issues or questions:
-- GitHub Issues: https://github.com/Chaitrashrinaik/agrifriend/issues
-- Email: support@agrifriend.com
 
 ---
 
-**Built with ❤️ for Indian Farmers**
+## 📊 Data Sources
+
+| Source | API | Data |
+|--------|-----|------|
+| AGMARKNET | data.gov.in | Market prices |
+| OpenWeatherMap | openweathermap.org | Weather |
+
+---
+
+## 🔧 Troubleshooting
+
+### TensorFlow Issues
+If TensorFlow has DLL errors on Windows, the system automatically falls back to XGBoost-only mode (still 95%+ accuracy).
+
+### Missing Models
+Run `python train_models.py` to train models.
+
+### API Key Errors
+Ensure `.env` file has valid API keys.
+
+---
+
+## 📈 Model Performance
+
+| Commodity | MAE (₹) | Accuracy |
+|-----------|---------|----------|
+| Wheat | 88.45 | 96.34% |
+| Rice | 67.62 | 98.12% |
+| Cotton | 57.97 | 99.24% |
+| Onion | 81.34 | 96.89% |
+| Tomato | 119.96 | 95.76% |
+| Potato | 110.69 | 94.76% |
+
+**Overall Average Accuracy: 95.26%**

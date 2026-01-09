@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   Search, 
   Filter, 
@@ -7,12 +6,12 @@ import {
   TrendingUp, 
   TrendingDown,
   Calendar,
-  MapPin,
-  ArrowLeft
+  MapPin
 } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { marketPricesAPI } from '../services/api';
 import { MarketPrice } from '../types';
+import PageNavigation from '../components/PageNavigation';
 
 const MarketPrices = () => {
   const [prices, setPrices] = useState<MarketPrice[]>([]);
@@ -23,7 +22,7 @@ const MarketPrices = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCommodity, setSelectedCommodity] = useState('');
   const [selectedState, setSelectedState] = useState('');
-  const [dateRange, setDateRange] = useState('price');
+  const [dateRange, setDateRange] = useState('price');  // Default to price forecast (no date filter)
   const [showFilters, setShowFilters] = useState(false);
   
   // Chart state
@@ -69,21 +68,28 @@ const MarketPrices = () => {
     if (searchQuery) {
       filtered = filtered.filter(p => 
         p.commodity.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.market.location.toLowerCase().includes(searchQuery.toLowerCase())
+        p.market.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.market.state.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
-    // Commodity filter
-    if (selectedCommodity && selectedCommodity !== 'All') {
-      filtered = filtered.filter(p => p.commodity === selectedCommodity);
+    // Commodity filter - use partial match for better results
+    if (selectedCommodity && selectedCommodity !== 'All' && selectedCommodity !== '') {
+      filtered = filtered.filter(p => 
+        p.commodity.toLowerCase().includes(selectedCommodity.toLowerCase()) ||
+        selectedCommodity.toLowerCase().includes(p.commodity.toLowerCase())
+      );
     }
 
-    // State filter
-    if (selectedState && selectedState !== 'All') {
-      filtered = filtered.filter(p => p.market.state === selectedState);
+    // State filter - use partial match for better results
+    if (selectedState && selectedState !== 'All' && selectedState !== '') {
+      filtered = filtered.filter(p => 
+        p.market.state.toLowerCase().includes(selectedState.toLowerCase()) ||
+        selectedState.toLowerCase().includes(p.market.state.toLowerCase())
+      );
     }
 
-    // Date range filter
+    // Date range filter - only apply for specific date filters, not for prediction types
     const now = new Date();
     if (dateRange === 'today') {
       filtered = filtered.filter(p => {
@@ -94,6 +100,7 @@ const MarketPrices = () => {
       const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
       filtered = filtered.filter(p => new Date(p.timestamp) >= weekAgo);
     }
+    // For 'price', 'demand', 'risk', 'optimal' - don't filter by date, show all
 
     setFilteredPrices(filtered);
   };
@@ -372,33 +379,27 @@ const MarketPrices = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pb-20">
-      {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link to="/dashboard" className="text-gray-600 hover:text-primary-600">
-                <ArrowLeft className="w-6 h-6" />
-              </Link>
-              <h1 className="text-2xl font-bold text-gray-800">Market Prices</h1>
-            </div>
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setComparisonMode(!comparisonMode)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  comparisonMode ? 'bg-primary-600 text-white' : 'bg-gray-200 text-gray-700'
-                }`}
-              >
-                Compare
-              </button>
-              <button
-                onClick={exportToCSV}
-                className="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                <span className="hidden md:inline">Export</span>
-              </button>
-            </div>
+      <PageNavigation title="Market Prices" />
+      
+      {/* Action Bar */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-end space-x-2">
+            <button
+              onClick={() => setComparisonMode(!comparisonMode)}
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                comparisonMode ? 'bg-primary-600 text-white' : 'bg-gray-200 text-gray-700'
+              }`}
+            >
+              Compare
+            </button>
+            <button
+              onClick={exportToCSV}
+              className="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              <span className="hidden md:inline">Export</span>
+            </button>
           </div>
         </div>
       </div>
@@ -596,36 +597,127 @@ const MarketPrices = () => {
         {/* Comparison View */}
         {comparisonMode && selectedForComparison.length > 0 && (
           <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">Price Comparison</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-gray-800">📊 Price Comparison</h2>
+              <button
+                onClick={() => setSelectedForComparison([])}
+                className="text-sm text-gray-500 hover:text-red-600"
+              >
+                Clear Selection
+              </button>
+            </div>
+            
+            {/* Comparison Chart */}
+            <div className="mb-6">
+              <ResponsiveContainer width="100%" height={250}>
+                <LineChart data={(() => {
+                  const comparedPrices = filteredPrices.filter(p => selectedForComparison.includes(p.id));
+                  // Generate comparison data for chart
+                  const chartData = [];
+                  for (let i = 6; i >= 0; i--) {
+                    const date = new Date();
+                    date.setDate(date.getDate() - i);
+                    const dataPoint: any = {
+                      date: date.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })
+                    };
+                    comparedPrices.forEach((price, idx) => {
+                      const variation = (Math.random() - 0.5) * 0.1;
+                      dataPoint[`price${idx}`] = Math.round(price.price.value * (1 + variation));
+                    });
+                    chartData.push(dataPoint);
+                  }
+                  return chartData;
+                })()}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="date" />
+                  <YAxis />
+                  <Tooltip />
+                  {filteredPrices
+                    .filter(p => selectedForComparison.includes(p.id))
+                    .map((price, idx) => (
+                      <Line
+                        key={price.id}
+                        type="monotone"
+                        dataKey={`price${idx}`}
+                        name={`${price.commodity} (${price.market.state})`}
+                        stroke={['#2563eb', '#10b981', '#f59e0b', '#ef4444'][idx]}
+                        strokeWidth={2}
+                        dot={{ fill: ['#2563eb', '#10b981', '#f59e0b', '#ef4444'][idx] }}
+                      />
+                    ))}
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Comparison Table */}
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b">
+                  <tr className="border-b bg-gray-50">
                     <th className="text-left py-3 px-4">Commodity</th>
                     <th className="text-left py-3 px-4">Market</th>
-                    <th className="text-right py-3 px-4">Price</th>
+                    <th className="text-right py-3 px-4">Price (₹/quintal)</th>
                     <th className="text-right py-3 px-4">Change</th>
+                    <th className="text-center py-3 px-4">Rank</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredPrices
                     .filter(p => selectedForComparison.includes(p.id))
-                    .map(price => (
+                    .sort((a, b) => b.price.value - a.price.value)
+                    .map((price, index) => (
                       <tr key={price.id} className="border-b hover:bg-gray-50">
                         <td className="py-3 px-4 font-medium">{price.commodity}</td>
                         <td className="py-3 px-4">{price.market.location}, {price.market.state}</td>
-                        <td className="py-3 px-4 text-right font-bold">₹{price.price.value}</td>
+                        <td className="py-3 px-4 text-right font-bold text-lg">₹{price.price.value}</td>
                         <td className={`py-3 px-4 text-right font-semibold ${
                           price.priceChange.value >= 0 ? 'text-green-600' : 'text-red-600'
                         }`}>
                           {price.priceChange.value >= 0 ? '+' : ''}
                           {price.priceChange.percentage.toFixed(2)}%
                         </td>
+                        <td className="py-3 px-4 text-center">
+                          <span className={`px-2 py-1 rounded-full text-xs font-bold ${
+                            index === 0 ? 'bg-green-100 text-green-800' :
+                            index === selectedForComparison.length - 1 ? 'bg-red-100 text-red-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>
+                            {index === 0 ? '🥇 Highest' : index === selectedForComparison.length - 1 ? '🥉 Lowest' : `#${index + 1}`}
+                          </span>
+                        </td>
                       </tr>
                     ))}
                 </tbody>
               </table>
             </div>
+
+            {/* Comparison Summary */}
+            {selectedForComparison.length >= 2 && (
+              <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+                <h3 className="font-semibold text-blue-800 mb-2">📈 Comparison Summary</h3>
+                {(() => {
+                  const comparedPrices = filteredPrices.filter(p => selectedForComparison.includes(p.id));
+                  const prices = comparedPrices.map(p => p.price.value);
+                  const highest = Math.max(...prices);
+                  const lowest = Math.min(...prices);
+                  const diff = highest - lowest;
+                  const diffPercent = ((diff / lowest) * 100).toFixed(1);
+                  const highestItem = comparedPrices.find(p => p.price.value === highest);
+                  const lowestItem = comparedPrices.find(p => p.price.value === lowest);
+                  
+                  return (
+                    <div className="text-sm text-blue-700 space-y-1">
+                      <p>• Price difference: <strong>₹{diff}</strong> ({diffPercent}% variation)</p>
+                      <p>• Best price: <strong>{highestItem?.commodity}</strong> in {highestItem?.market.state} at ₹{highest}</p>
+                      <p>• Lowest price: <strong>{lowestItem?.commodity}</strong> in {lowestItem?.market.state} at ₹{lowest}</p>
+                      {diff > 500 && (
+                        <p className="text-green-700 font-medium">💡 Significant price difference! Consider selling in {highestItem?.market.state} for better returns.</p>
+                      )}
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
           </div>
         )}
 

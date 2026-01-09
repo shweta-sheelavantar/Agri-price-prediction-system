@@ -112,24 +112,66 @@ export class AuthService {
 
   // Sign in with phone (OTP)
   async signInWithPhone(phone: string) {
-    const { data, error } = await supabase.auth.signInWithOtp({
-      phone: phone,
-    })
+    console.log('📱 SignInWithPhone attempt:', { phone })
+    
+    // Always use mock auth for phone authentication since SMS providers need special setup
+    console.log('📱 Using mock auth for phone signin (SMS provider not configured)')
+    
+    // Validate phone number
+    if (!phone || phone.length < 10) {
+      throw new Error('Please enter a valid phone number')
+    }
 
-    if (error) throw error
-    return data
+    // For demo purposes, just simulate sending OTP
+    console.log('📨 Mock OTP sent to:', phone)
+    return { user: null, session: null }
   }
 
   // Verify OTP
   async verifyOtp(phone: string, token: string) {
-    const { data, error } = await supabase.auth.verifyOtp({
-      phone,
-      token,
-      type: 'sms'
-    })
-
-    if (error) throw error
-    return data
+    console.log('🔢 VerifyOtp attempt:', { phone, token: token.substring(0, 2) + '****' })
+    
+    // Always use mock auth for OTP verification
+    console.log('📱 Using mock auth for OTP verification')
+    
+    // Validate OTP
+    if (!token || token.length !== 6 || !/^\d+$/.test(token)) {
+      throw new Error('Please enter a valid 6-digit OTP')
+    }
+    
+    // For demo purposes, accept any 6-digit code
+    console.log('✅ Mock OTP verified')
+    
+    // Create a mock user session
+    const mockUser = {
+      id: `mock-phone-user-${Date.now()}`,
+      phone: phone,
+      email: '',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      aud: 'authenticated',
+      role: 'authenticated',
+      email_confirmed_at: null,
+      phone_confirmed_at: new Date().toISOString(),
+      confirmation_sent_at: new Date().toISOString(),
+      app_metadata: {},
+      user_metadata: {
+        phone: phone,
+      },
+      identities: [],
+      factors: []
+    }
+    
+    const mockSession = {
+      access_token: `mock-phone-token-${Date.now()}`,
+      refresh_token: `mock-phone-refresh-${Date.now()}`,
+      expires_in: 3600,
+      expires_at: Math.floor(Date.now() / 1000) + 3600,
+      token_type: 'bearer' as const,
+      user: mockUser
+    }
+    
+    return { user: mockUser, session: mockSession }
   }
 
   // Sign out

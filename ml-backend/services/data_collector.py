@@ -5,6 +5,7 @@ Integrates multiple agricultural data sources
 
 import asyncio
 import logging
+import random
 from datetime import datetime, timedelta
 from typing import Dict, List, Any, Optional
 import pandas as pd

@@ -136,12 +136,15 @@ class RealTimeNotificationService:
                 
                 for region in regions:
                     try:
-                        weather_data = await self.data_collector.get_weather_data(
-                            region['city'], region['state']
+                        weather_data = await self.data_collector.collect_weather_data(
+                            region['state'], region['city']
                         )
                         
+                        # Extract current weather from the response
+                        current_weather = weather_data.get('current_weather', {})
+                        
                         # Check for weather alerts
-                        await self.check_weather_thresholds(region, weather_data)
+                        await self.check_weather_thresholds(region, current_weather)
                         
                     except Exception as e:
                         logger.error(f"Error getting weather for {region}: {e}")
@@ -385,7 +388,11 @@ class RealTimeNotificationService:
         if "all" in self.subscribers:
             for callback in self.subscribers["all"]:
                 try:
-                    await callback(notification)
+                    # Handle both sync and async callbacks
+                    if asyncio.iscoroutinefunction(callback):
+                        await callback(notification)
+                    else:
+                        callback(notification)
                 except Exception as e:
                     logger.error(f"Error sending notification to subscriber: {e}")
     
@@ -399,7 +406,11 @@ class RealTimeNotificationService:
         if user_id in self.subscribers:
             for callback in self.subscribers[user_id]:
                 try:
-                    await callback(notification)
+                    # Handle both sync and async callbacks
+                    if asyncio.iscoroutinefunction(callback):
+                        await callback(notification)
+                    else:
+                        callback(notification)
                 except Exception as e:
                     logger.error(f"Error sending notification to user {user_id}: {e}")
     

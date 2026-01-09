@@ -76,7 +76,7 @@ The AgriFriend ML platform has been successfully trained and tested with **REAL 
 1. **Government APIs:** AGMARKNET price data (579b464db66ec23bdd0000018b6fa4a91b50448363abcccd5f1f13be)
 2. **Weather APIs:** OpenWeatherMap real-time data (79093526d697101e68a0f9cf082e3a73)
 3. **Historical Data:** Agricultural statistics and market trends
-4. **Synthetic Data:** Fallback generation for data gaps
+4. **AGMARKNET Data:** Fallback generation for data gaps
 
 ### **Training Process:**
 - **Continuous Learning:** Models retrain with new data automatically
@@ -98,7 +98,7 @@ The AgriFriend ML platform has been successfully trained and tested with **REAL 
 - **AGMARKNET API:** Government commodity prices
 - **OpenWeatherMap:** Real-time weather data (22.05°C Ludhiana confirmed)
 - **SQLite Database:** Agricultural data storage and retrieval
-- **Multi-source Fallbacks:** Synthetic data when APIs timeout
+- **Multi-source Fallbacks:** AGMARKNET data when APIs timeout
 
 ### **📊 Data Quality Metrics:**
 - **API Uptime:** 95%+ (with intelligent fallbacks)

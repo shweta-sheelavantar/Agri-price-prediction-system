@@ -5,7 +5,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import PriceTicker from '../components/PriceTicker';
 import Navbar from '../components/Navbar';
 import AuthModal from '../components/AuthModal';
-import AuthRequiredNotification from '../components/AuthRequiredNotification';
 import { Phone, Mail, TrendingUp, Brain, Users, Shield, Zap, Globe } from 'lucide-react';
 import { marketPricesAPI } from '../services/api';
 
@@ -13,12 +12,8 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const { login, isAuthenticated } = useAuth();
   const { t } = useLanguage();
-  const [mobileNumber, setMobileNumber] = useState('');
-  const [primaryCrop, setPrimaryCrop] = useState('Wheat (गेहूं)');
-  const [isLoading, setIsLoading] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup'>('signin');
-  const [showAuthNotification, setShowAuthNotification] = useState(false);
   
   // Price checker state
   const [selectedCrop, setSelectedCrop] = useState('Onion');
@@ -26,19 +21,6 @@ const LandingPage = () => {
   const [currentPrice, setCurrentPrice] = useState(2840);
   const [predictedPrice, setPredictedPrice] = useState(3180);
   const [priceChange, setPriceChange] = useState(12);
-
-  const crops = [
-    'Wheat (गेहूं)',
-    'Rice (चावल)',
-    'Cotton (कपास)',
-    'Sugarcane (गन्ना)',
-    'Onion (प्याज)',
-    'Tomato (टमाटर)',
-    'Potato (आलू)',
-    'Soybean (सोयाबीन)',
-    'Maize (मक्का)',
-    'Groundnut (मूंगफली)',
-  ];
 
   const priceCheckCrops = ['Wheat', 'Rice', 'Cotton', 'Onion', 'Tomato', 'Potato', 'Soybean'];
 
@@ -69,40 +51,6 @@ const LandingPage = () => {
     };
     fetchPrice();
   }, [selectedCrop]);
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Check if user is already authenticated
-    if (isAuthenticated) {
-      navigate('/dashboard');
-      return;
-    }
-
-    // Show authentication modal if not logged in
-    if (mobileNumber || primaryCrop !== 'Wheat (गेहूं)') {
-      setAuthModalMode('signin');
-      setShowAuthModal(true);
-      return;
-    }
-
-    // Legacy login for backward compatibility
-    if (mobileNumber.length !== 10) {
-      alert('Please enter a valid 10-digit mobile number');
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      await login(mobileNumber, primaryCrop);
-      navigate('/dashboard');
-    } catch (error) {
-      console.error('Login error:', error);
-      alert('Login failed. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -285,7 +233,8 @@ const LandingPage = () => {
                   if (isAuthenticated) {
                     navigate('/market-prices');
                   } else {
-                    setShowAuthNotification(true);
+                    setAuthModalMode('signin');
+                    setShowAuthModal(true);
                   }
                 }}
                 className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-lg transition-colors inline-flex items-center"

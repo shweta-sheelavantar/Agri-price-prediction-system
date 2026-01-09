@@ -18,6 +18,11 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
+# Global cache for API responses
+_api_cache = {}
+_cache_timestamp = None
+_cache_ttl = 300  # 5 minutes cache
+
 class AGMARKNETClient:
     """
     Client for accessing AGMARKNET (Agricultural Marketing Division) data
@@ -326,52 +331,90 @@ class AGMARKNETClient:
     
     async def _get_real_agmarknet_data(self, commodity: str, state: str, district: str = None) -> Optional[Dict[str, Any]]:
         """
-        Make actual API call to AGMARKNET
+        Make actual API call to AGMARKNET with caching
         """
+        global _api_cache, _cache_timestamp, _cache_ttl
+        
         try:
-            # AGMARKNET API endpoint
-            url = "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070"
-            
-            # API parameters
-            params = {
-                'api-key': self.api_key,
-                'format': 'json',
-                'limit': 100,
-                'filters[commodity]': commodity.lower(),
-                'filters[state]': state.lower()
-            }
-            
-            if district:
-                params['filters[district]'] = district.lower()
-            
-            # Make API request
-            response = requests.get(url, params=params, timeout=10)
-            
-            if response.status_code == 200:
-                data = response.json()
-                
-                if data.get('records') and len(data['records']) > 0:
-                    # Process the real data
-                    latest_record = data['records'][0]
-                    
-                    return {
-                        "commodity": commodity,
-                        "state": state,
-                        "district": district,
-                        "current_price": float(latest_record.get('modal_price', 0)),
-                        "unit": "INR per quintal",
-                        "market_date": latest_record.get('arrival_date', datetime.now().strftime("%Y-%m-%d")),
-                        "source": "AGMARKNET (Real API)",
-                        "data_quality": "excellent",
-                        "price_trend": "real_data",
-                        "market": latest_record.get('market', 'Unknown'),
-                        "variety": latest_record.get('variety', 'Common')
-                    }
-                else:
-                    logger.warning(f"No real data found for {commodity} in {state}")
-                    return None
+            # Check if we have cached data
+            current_time = time.time()
+            if _cache_timestamp and (current_time - _cache_timestamp) < _cache_ttl and _api_cache.get('records'):
+                logger.info("Using cached AGMARKNET data")
+                records = _api_cache['records']
             else:
-                logger.error(f"AGMARKNET API error: {response.status_code}")
+                # AGMARKNET API endpoint
+                url = "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070"
+                
+                # API parameters - fetch without filters first, then filter locally
+                params = {
+                    'api-key': self.api_key,
+                    'format': 'json',
+                    'limit': 1000  # Get more records to find matches
+                }
+                
+                # Make API request
+                logger.info("Fetching fresh data from AGMARKNET API...")
+                response = requests.get(url, params=params, timeout=15)
+                
+                if response.status_code == 200:
+                    data = response.json()
+                    records = data.get('records', [])
+                    
+                    # Cache the response
+                    _api_cache = {'records': records}
+                    _cache_timestamp = current_time
+                    logger.info(f"Cached {len(records)} records from AGMARKNET API")
+                else:
+                    logger.error(f"AGMARKNET API error: {response.status_code}")
+                    return None
+            
+            if not records:
+                logger.warning("No records in AGMARKNET cache")
+                return None
+            
+            # Filter records locally for better matching
+            commodity_lower = commodity.lower()
+            state_lower = state.lower() if state and state != 'all_india' else None
+            
+            matching_records = []
+            for record in records:
+                record_commodity = record.get('commodity', '').lower()
+                record_state = record.get('state', '').lower()
+                
+                # Check if commodity matches (partial match)
+                commodity_match = (
+                    commodity_lower in record_commodity or
+                    record_commodity in commodity_lower or
+                    any(word in record_commodity for word in commodity_lower.split())
+                )
+                
+                # Check if state matches (if specified)
+                state_match = True
+                if state_lower:
+                    state_match = state_lower in record_state or record_state in state_lower
+                
+                if commodity_match and state_match:
+                    matching_records.append(record)
+            
+            if matching_records:
+                # Use the first matching record
+                latest_record = matching_records[0]
+                
+                return {
+                    "commodity": commodity,
+                    "state": state,
+                    "district": district,
+                    "current_price": float(latest_record.get('modal_price', 0)),
+                    "unit": "INR per quintal",
+                    "market_date": latest_record.get('arrival_date', datetime.now().strftime("%Y-%m-%d")),
+                    "source": "AGMARKNET (Real API)",
+                    "data_quality": "excellent",
+                    "price_trend": "real_data",
+                    "market": latest_record.get('market', 'Unknown'),
+                    "variety": latest_record.get('variety', 'Common')
+                }
+            else:
+                logger.debug(f"No matching records found for {commodity} in {state}")
                 return None
                 
         except Exception as e:
